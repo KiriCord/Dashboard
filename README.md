@@ -1,11 +1,11 @@
-## Electron + React + TypeScript template
+## Dashboard
 
-Template for a project using Electron, React and TypeScript
+Data visualization
 
 ## Installation
 
 ```bash
-git clone https://github.com/KiriCord/electron-react-ts.git
+git clone https://github.com/KiriCord/Dashboard.git
 ```
 
 Use npm or yarn
