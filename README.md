@@ -28,6 +28,8 @@ TypeScript:<br/>
 https://metanit.com/web/typescript/<br/>
 https://www.typescriptlang.org/docs/<br/>
 https://habr.com/ru/company/macloud/blog/557996/<br/>
+https://tproger.ru/translations/course-on-typescript/<br/>
+https://proglib.io/p/samouchitel-dlya-nachinayushchih-kak-osvoit-typescript-s-nulya-za-30-minut-2021-03-12<br/>
 React:<br/>
 https://metanit.com/web/react/<br/>
 https://ru.reactjs.org/tutorial/tutorial.html<br/>
