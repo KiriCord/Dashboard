@@ -25,6 +25,7 @@ npm start
 Собственный Шаблон Electron-React-TypeScript - https://github.com/KiriCord/electron-react-ts<br/>
 
 TypeScript:<br/>
+http://typescript-lang.ru/docs/<br/>
 https://metanit.com/web/typescript/<br/>
 https://www.typescriptlang.org/docs/<br/>
 https://habr.com/ru/company/macloud/blog/557996/<br/>
