@@ -1,4 +1,5 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, globalShortcut, ipcMain} from 'electron';
+import {MouseMove} from './mouse';
 
 let mainWindow: BrowserWindow | null;
 
@@ -8,10 +9,17 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+//let i = 0;
+
 const createWindow = (): void => {
   mainWindow = new BrowserWindow({
-    height: 1200,
-    width: 1600,
+    height: 720,
+    width: 1280,
+    center: true,
+    webPreferences: {
+      nodeIntegration: true, //Допступ к API-интерфейсам Node.js. ОПАСНО!
+      contextIsolation: false, //
+    }
   });
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
@@ -21,12 +29,44 @@ const createWindow = (): void => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+/*
+  mainWindow.hookWindowMessage(Number.parseInt("0x0232"), (wParam, lParam) => {
+    console.log("Окно переместилось")
+  })
+
+  mainWindow.hookWindowMessage(Number.parseInt("0x200"), (wParam, lParam) => {
+    i++;
+    console.log(i)
+  })
+*/
+
+  mainWindow.webContents.on("before-input-event", (event, input) => {
+    if(input.type == "keyDown" && input.control && input.key.toLowerCase() == 'i') {
+      mainWindow.setSize(512, 512);
+      console.log("Нажатие клавиши Ctrl + i(англ раскладка)");
+    }
+  })
+
 };
 
+app.whenReady().then(()=> {
+  globalShortcut.register('Control+Alt+I', () => {
+    console.log("Test global keys")
+  })
+})
 
+app.on('ready', function() {
+  createWindow();
 
-app.on('ready', createWindow);
+  mainWindow.webContents.on('did-finish-load', () => {
+    mainWindow.webContents.send('maintToRenderer', MouseMove.getCursorScreenPoint())
+  });
 
+  /*ipcMain.on("maintToRenderer", (e, data) => {
+    data = "hello Renderer";
+  });*/
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -40,4 +80,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
