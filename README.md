@@ -38,4 +38,12 @@ https://ru.reactjs.org/docs/getting-started.html<br/>
 Electron:<br/>
 https://www.electronjs.org/ru/docs/latest<br/>
 https://www.electronforge.io/<br/>
+Security<br/>
+https://www.electronjs.org/docs/latest/tutorial/security<br/>
+https://habr.com/ru/post/578016/<br/>
+Other:<br/>
+https://blog.logrocket.com/building-a-menu-bar-application-with-electron-and-react/<br/>
+https://www.electronjs.org/docs/latest/api/ipc-main<br/>
+
+
 
