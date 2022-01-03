@@ -1,5 +1,6 @@
-import { app, BrowserWindow, globalShortcut, ipcMain} from 'electron';
+import { app, BrowserWindow, globalShortcut, ipcMain, Menu, MenuItem, MenuItemConstructorOptions} from 'electron';
 import {MouseMove} from './mouse';
+import { templateMenu } from './menu';
 
 let mainWindow: BrowserWindow | null;
 
@@ -40,6 +41,10 @@ const createWindow = (): void => {
     console.log(i)
   })
 */
+
+
+  const menu = Menu.buildFromTemplate(templateMenu)
+  Menu.setApplicationMenu(menu)
 
   mainWindow.webContents.on("before-input-event", (event, input) => {
     if(input.type == "keyDown" && input.control && input.key.toLowerCase() == 'i') {
