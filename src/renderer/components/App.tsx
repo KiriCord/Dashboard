@@ -12,7 +12,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -37,6 +36,7 @@ export const data = {
   }]
 
 };
+
 
 export function App() {
   return <Line data={data} />;

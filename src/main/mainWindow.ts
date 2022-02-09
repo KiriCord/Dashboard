@@ -1,5 +1,4 @@
 import { app, BrowserWindow } from 'electron';
-import path from 'path';
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
@@ -48,8 +47,12 @@ export function createMainWindow(): BrowserWindow {
 
 
 function regMainWinIPC() {
-    /* 
 
+  let list : number[] = [10,20,30];
+
+  mainWin.webContents.send('fromMain', list);
+
+    /* 
     /*globalShortcut.register('Control+Alt+I', () => {
     console.log("Test global keys")
   })

@@ -1,12 +1,12 @@
-import { app, BrowserWindow, globalShortcut, ipcMain, Menu, MenuItem, MenuItemConstructorOptions} from 'electron';
+import { app, BrowserWindow, globalShortcut, ipcMain} from 'electron';
 import {MouseMove} from './mouse';
 import { createMainWindow } from './mainWindow';
 import { templateMenu } from './menu';
+import { Client } from './Client';
 
 if (require('electron-squirrel-startup')) { 
   app.quit();
 }
-
 
 app.whenReady().then(()=> {
   
