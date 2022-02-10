@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import * as ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -41,14 +40,3 @@ export const data = {
 export function App() {
   return <Line data={data} />;
 }
-
-/*const TestChart = () => {
-  console.log("testChart");
-    return(
-      <div>
-        <h4>Test</h4>
-      </div>
-    );
-}
-
-export default TestChart;*/

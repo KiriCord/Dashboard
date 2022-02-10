@@ -2,7 +2,6 @@ const rules = require('./webpack.rules');
 const plugins = require('./webpack.plugins');
 
 module.exports = {
-  //target: ['electron-renderer'],
   module: {
     rules,
   },
@@ -10,7 +9,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
     alias: {
-      'react-dom': '@hot-loader/react-dom', 
+      'react-dom': '@hot-loader/react-dom',
       ...require('./webpack.aliases'),
     },
   },
