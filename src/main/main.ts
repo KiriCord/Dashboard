@@ -1,15 +1,18 @@
-import { app, BrowserWindow, globalShortcut, ipcMain} from 'electron';
-import {MouseMove} from './mouse';
+import { app, BrowserWindow, globalShortcut } from 'electron';
+import { MouseMove } from './mouse';
 import { createMainWindow } from './mainWindow';
 import { templateMenu } from './menu';
 import { Client } from './Client';
 
-if (require('electron-squirrel-startup')) { 
+const client = new Client("ws://localhost:8999");
+client.startWebSocket();
+
+if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-app.whenReady().then(()=> {
-  
+app.whenReady().then(() => {
+
 })
 
 app.on('ready', createMainWindow);  //#TODO: WebSocket, IPC, preload, http rest
