@@ -1,44 +1,73 @@
 {
-    "env": {
-      "browser": true,
-      "es6": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "plugin:import/recommended",
-      "plugin:import/electron",
-      "plugin:import/typescript"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "settings": {
-        "import/resolver": {
-          "node": {
-            "extensions": [".js", ".jsx", ".ts", ".tsx"]
-          },
-          "alias": {
-            "map": [
-              ["@renderer", "./src/renderer"],
-              ["@components", "./src/components"],
-              ["@common", "./src/common"],
-              ["@main", "./src/main"],
-              ["@src", "./src"],
-              ["@assets", "./assets"]
-            ],
-            "extensions": [".js", ".jsx", ".ts", ".tsx"]
-          }
-        },
-        "react": {
-          "version": "latest"
-        }
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/recommended",
+    "plugin:import/electron",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       },
-      "rules": {
-        "react/prop-types": "off",
-        "@typescript-eslint/no-var-requires": "off"
+      "alias": {
+        "map": [
+          [
+            "@renderer",
+            "./src/renderer"
+          ],
+          [
+            "@components",
+            "./src/components"
+          ],
+          [
+            "@common",
+            "./src/common"
+          ],
+          [
+            "@main",
+            "./src/main"
+          ],
+          [
+            "@src",
+            "./src"
+          ],
+          [
+            "@assets",
+            "./assets"
+          ]
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    },
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "@typescript-eslint/no-var-requires": "off"
   }
 }
