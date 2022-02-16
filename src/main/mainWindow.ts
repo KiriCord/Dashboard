@@ -7,8 +7,8 @@ let mainWin: BrowserWindow | null;
 
 export function createMainWindow(): BrowserWindow {
   mainWin = new BrowserWindow({
-    height: 720,
-    width: 1280,
+    height: 1000,
+    width: 1600,
     center: true,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,

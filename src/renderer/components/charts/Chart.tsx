@@ -37,6 +37,6 @@ export const data = {
 };
 
 
-export function App() {
+export function Chart() {
   return <Line data={data} />;
 }
