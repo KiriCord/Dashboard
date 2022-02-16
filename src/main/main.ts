@@ -15,7 +15,7 @@ app.whenReady().then(() => {
 
 })
 
-app.on('ready', createMainWindow);  //#TODO: WebSocket, IPC, preload, http rest
+app.on('ready', createMainWindow);
 
 
 app.on('window-all-closed', () => {
