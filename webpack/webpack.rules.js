@@ -31,12 +31,13 @@ module.exports = [
     test: /\.css$/,
     use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
   },
+  // SASS/SCSS Loader
   {
-    test:/\.less$/,
+    test: /\.s[ac]ss$/i,
     use: [
       { loader: 'style-loader' },
       { loader: 'css-loader' },
-      { loader: 'less-loader' },
+      { loader: 'sass-loader' },
     ],
   },
   {
@@ -45,5 +46,13 @@ module.exports = [
     generator: {
       filename: 'assets/[hash][ext][quary]',
     },
+  },
+  {
+    test: /\.(png|jpe?g|gif|ico|svg|webp)$/,
+    use: [
+      {
+        loader: "file-loader",
+      }
+    ]
   },
 ];
