@@ -32,7 +32,8 @@ module.exports = {
         [
             '@electron-forge/plugin-webpack',
             {
-                devContentSecurity: '',
+                //default-src 'self' 'unsafe - inline' data:; script-src 'self' 'unsafe - eval' 'unsafe - inline' data:
+                devContentSecurityPolicy: ``,
                 port: 3000,
                 loggerPort: 9000,
                 mainConfig: path.join(rootDir, 'webpack/webpack.main.config.js'),
@@ -52,7 +53,8 @@ module.exports = {
                     ],
                 },
                 devServer: {
-                    liveReload: false,
+                    hot: true,
+                    historyApiFallback: true,
                 },
             },
         ],
