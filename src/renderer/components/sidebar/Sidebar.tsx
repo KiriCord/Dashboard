@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -11,24 +10,32 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { Link } from 'react-router-dom';
+
+//component="a" href='/main_window'
+//component="a" href='/page'
 
 export const Sidebar = (
     <React.Fragment>
         <ListSubheader component="div" inset>
             Дашборд
         </ListSubheader>
-        <ListItemButton>
-            <ListItemIcon>
-                <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Графики" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <TableChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Таблицы" />
-        </ListItemButton>
+        <Link to="/main_window" style={{ textDecoration: 'none', color: '#202020' }}>
+            <ListItemButton >
+                <ListItemIcon>
+                    <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Графики" />
+            </ListItemButton>
+        </Link>
+        <Link to="/page" style={{ textDecoration: 'none', color: '#202020' }}>
+            <ListItemButton >
+                <ListItemIcon>
+                    <TableChartIcon />
+                </ListItemIcon>
+                <ListItemText primary="Таблицы" />
+            </ListItemButton>
+        </Link>
         <ListItemButton>
             <ListItemIcon>
                 <AssessmentIcon />

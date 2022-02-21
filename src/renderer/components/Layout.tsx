@@ -1,12 +1,24 @@
 import React from 'react';
-import Routes from '../Routes';
-import Mainbar from './Mainbar';
+import Rout from '../Rout';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+
 
 const Layout = (props: any) => {
+
+    const mdTheme = createTheme({
+
+    });
+
     return (
         <>
-            <Mainbar />
-            <Routes />
+            <ThemeProvider theme={mdTheme}>
+                <Box sx={{ display: 'flex' }}>
+                    <CssBaseline />
+                    <Rout />
+                </Box>
+            </ThemeProvider >
         </>
     );
 }
