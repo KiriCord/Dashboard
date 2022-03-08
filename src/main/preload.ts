@@ -1,9 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 import { Client } from './Client';
 
-const client = new Client("ws://localhost:8999");
-client.startWebSocket();
-
 const messageApi = {
     send: (channel: string, data: any) => {
         return ipcRenderer.send(channel, data);

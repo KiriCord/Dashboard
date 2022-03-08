@@ -1,4 +1,4 @@
 export interface ICommunication {
-    URL : string;
-    Port? : string;
+    URL: string;
+    Port?: string;
 }

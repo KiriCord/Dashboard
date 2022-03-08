@@ -1,4 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
+import WebSocket from "ws";
+import { Client } from './Client';
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
@@ -21,13 +23,16 @@ export function createMainWindow(): BrowserWindow {
 
   mainWin.webContents.openDevTools();
 
-  /*ipcMain.handle("fromMain", () => {
-
-  });*/
-
   ipcMain.on("toMain", (event, data) => {
-    console.log(data + " Из renderer");
-    mainWin?.webContents.send("fromMain", " Из Main");
+
+    let client = new Client("ws://localhost:8999");
+    client.onMessage((message) => {
+      let mess = JSON.parse(message.toString())
+      mainWin?.webContents.send("fromMain", mess);
+      console.log('[Server]', mess.data);
+    });
+
+    console.log(`[Renderer]${data}`);
   })
 
 
