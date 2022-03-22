@@ -3,10 +3,9 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import { Multitype } from "../components/charts/Multitype";
 import { Debits } from "../components/charts/Debits";
-import { Production } from "../components/charts/Production";
-import { Accumulated } from "../components/charts/Accumulated";
+import { MultiLine } from "../components/charts/MultiLine";
 
-const Dashboard = (props: any) => {
+const Debit = (props: any) => {
     return (
         <>
             <Box
@@ -28,20 +27,20 @@ const Dashboard = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Debits />
+                                <MultiLine />
                             </Paper>
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Production />
+                                <MultiLine />
                             </Paper>
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Accumulated />
+                                <MultiLine />
                             </Paper>
                         </Grid>
                         {/* Chart 4 */}
@@ -53,7 +52,7 @@ const Dashboard = (props: any) => {
                         {/* Chart 5 */}
                         <Grid item xs={12}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Multitype />
+                                <Debits />
                             </Paper>
                         </Grid>
                     </Grid>
@@ -63,4 +62,4 @@ const Dashboard = (props: any) => {
     );
 }
 
-export default Dashboard;
+export default Debit;

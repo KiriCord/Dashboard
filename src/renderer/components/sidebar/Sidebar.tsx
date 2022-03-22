@@ -28,12 +28,12 @@ export const Sidebar = (
                 <ListItemText primary="Графики" />
             </ListItemButton>
         </Link>
-        <Link to="/page" style={{ textDecoration: 'none', color: '#202020' }}>
+        <Link to="/debit" style={{ textDecoration: 'none', color: '#202020' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <TableChartIcon />
+                    <BarChartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Таблицы" />
+                <ListItemText primary="Дебиты по МЭР" />
             </ListItemButton>
         </Link>
         <ListItemButton>
@@ -44,7 +44,7 @@ export const Sidebar = (
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
-                <BarChartIcon />
+                <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="Меню 1" />
         </ListItemButton>
@@ -60,25 +60,27 @@ export const Sidebar = (
 export const SecondSidebar = (
     <React.Fragment>
         <ListSubheader component="div" inset>
-            Пункт 1
+            Таблицы
         </ListSubheader>
+        <Link to="/table" style={{ textDecoration: 'none', color: '#202020' }}>
+            <ListItemButton>
+                <ListItemIcon>
+                    <TableChartIcon />
+                </ListItemIcon>
+                <ListItemText primary="Таблица 1" />
+            </ListItemButton>
+        </Link>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon />
+                <TableChartIcon />
             </ListItemIcon>
-            <ListItemText primary="Меню 1" />
+            <ListItemText primary="Таблица 2" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon />
+                <TableChartIcon />
             </ListItemIcon>
-            <ListItemText primary="Меню 2" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Меню 3" />
+            <ListItemText primary="Таблица 3" />
         </ListItemButton>
     </React.Fragment>
 );

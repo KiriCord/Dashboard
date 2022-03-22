@@ -27,7 +27,7 @@ const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 export const data = {
   labels: labels,
   datasets: [{
-    label: 'My First Dataset',
+    label: 'First Dataset',
     data: [65, 59, 80, 81, 56, 55, 40],
     fill: true,
     borderColor: 'rgb(75, 192, 192)',

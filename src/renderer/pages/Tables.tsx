@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
-import Container from '@mui/material/Container';
-import { Chart } from "../components/charts/Chart";
+import Table from "../components/table/table";
 
 const Tables = (props: any) => {
     return (
@@ -18,27 +17,23 @@ const Tables = (props: any) => {
             }}
         >
             <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={2}>
-                    {/* Chart 1*/}
-                    <Grid item xs={12} md={6}>
-                        <Paper
-                            sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                            <Chart />
-                        </Paper>
-                    </Grid>
-                    {/* Chart 2 */}
-                    <Grid item xs={12} md={6}>
-                        <Paper
-                            sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                            <Chart />
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </Container>
-
+            <Table />
         </Box>
     );
 }
 
 export default Tables;
+
+/*
+ПОД TABLE
+<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                            <Table />
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Container>
+
+*/
