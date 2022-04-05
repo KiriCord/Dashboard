@@ -1,4 +1,5 @@
 import WebSocket from "ws";
+import { ipcMain } from 'electron';
 import { ICommunication } from "./Interface/ICommunication";
 
 export class Client implements ICommunication {
@@ -10,17 +11,29 @@ export class Client implements ICommunication {
     this.URL = wsURL;
     this.Socket = new WebSocket(this.URL);
 
-    this.Socket.on('open', () => {
+    this.Socket.on('open', (event: Event) => {
       console.log("[Open] Соединение установлено");
     });
 
-    this.Socket.on('close', (e) => {
+    this.Socket.on('close', (event: CloseEvent) => {
       console.log('[Close] Соединение прервано');
+      /*setTimeout(() => {
+        this.Reconnect();
+      }, 10000)*/
     });
 
-    this.Socket.on('error', (error) => {
+    this.Socket.on('error', (error: any, event: ErrorEvent) => {
       console.log(`[Error] ${error.message}`);
     });
+  }
+
+  public Reconnect() {
+    console.log("Reconnecting...");
+    this.Socket = new WebSocket(this.URL);
+  }
+
+  public onClose(listener: (this: WebSocket, data: WebSocket.RawData, isBinary: boolean) => void) {
+    this.Socket.on('close', listener);
   }
 
   public onMessage(listener: (this: WebSocket, data: WebSocket.RawData, isBinary: boolean) => void) {
