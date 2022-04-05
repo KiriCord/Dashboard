@@ -8,7 +8,9 @@ import Box from '@mui/material/Box';
 const Layout = (props: any) => {
 
     const mdTheme = createTheme({
-
+        palette: {
+            mode: 'light',
+        }
     });
 
     return (
