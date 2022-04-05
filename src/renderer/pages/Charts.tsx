@@ -5,6 +5,11 @@ import { Multitype } from "../components/charts/Multitype";
 import { Debits } from "../components/charts/Debits";
 import { Production } from "../components/charts/Production";
 import { Accumulated } from "../components/charts/Accumulated";
+import Skeleton from '@mui/material/Skeleton';
+import CircularProgress from '@mui/material/CircularProgress';
+
+//
+//<CircularProgress sx={{ marginLeft: '50%' }} />
 
 const Dashboard = (props: any) => {
     return (
@@ -26,35 +31,44 @@ const Dashboard = (props: any) => {
                     <Grid container spacing={2}>
                         {/* Chart 1*/}
                         <Grid item xs={12} md={6}>
-                            <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Debits />
-                            </Paper>
+                            <Skeleton variant="rectangular" width="100%" height="100%">
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+                                    <Debits />
+                                </Paper>
+                            </Skeleton>
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
-                            <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Production />
-                            </Paper>
+                            <Skeleton variant="rectangular" width="100%" height="100%">
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+                                    <Production />
+                                </Paper>
+                            </Skeleton>
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Accumulated />
-                            </Paper>
+                            <Skeleton variant="rectangular" width="100%" height="100%">
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                    <Accumulated />
+                                </Paper>
+                            </Skeleton>
                         </Grid>
                         {/* Chart 4 */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Multitype />
-                            </Paper>
+                            <Skeleton variant="rectangular" width="100%" height="100%">
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                    <Multitype />
+                                </Paper>
+                            </Skeleton>
                         </Grid>
                         {/* Chart 5 */}
                         <Grid item xs={12}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Multitype />
-                            </Paper>
+                            <Skeleton variant="rectangular" width="100%" height="100%">
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                    <Multitype />
+                                </Paper>
+                            </Skeleton>
                         </Grid>
                     </Grid>
                 </Container>
