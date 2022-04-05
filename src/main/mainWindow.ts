@@ -7,6 +7,14 @@ declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 
 let mainWin: BrowserWindow | null;
 
+let testMsg = {
+  event: "onClose",
+  data: {
+    a: 5,
+    b: 7
+  }
+}
+
 export function createMainWindow(): BrowserWindow {
   mainWin = new BrowserWindow({
     height: 1000,
@@ -19,9 +27,13 @@ export function createMainWindow(): BrowserWindow {
     },
   });
 
+  mainWin.setMenuBarVisibility(false)
+
   mainWin.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   mainWin.webContents.openDevTools();
+
+
 
   ipcMain.on("toMain", (event, data) => {
 
@@ -31,6 +43,10 @@ export function createMainWindow(): BrowserWindow {
       mainWin?.webContents.send("fromMain", mess);
       console.log('[Server]', mess.data);
     });
+
+    client.onClose(() => {
+      mainWin?.webContents.send("fromMain", testMsg);
+    })
 
     console.log(`[Renderer]${data}`);
   })
