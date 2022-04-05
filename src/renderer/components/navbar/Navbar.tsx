@@ -7,6 +7,8 @@ import List from '@mui/material/List';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Sidebar, SecondSidebar } from "../sidebar/Sidebar";
 import Divider from '@mui/material/Divider';
+import StatusServer from './StatusServer';
+
 import React from 'react';
 
 const drawerWidth: number = 240;
@@ -96,6 +98,15 @@ const Navbar = () => {
                     >
                         Дашборд
                     </Typography>
+                    <Typography
+                        variant="subtitle1"
+                        color="inherit"
+                        noWrap
+                        sx={{ marginRight: 2 }}
+                    >
+                        Статус сервера
+                    </Typography>
+                    <StatusServer overlap="circular" variant="dot"></StatusServer>
                 </Toolbar>
             </AppBar>
 
