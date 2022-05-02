@@ -6,7 +6,6 @@ import { Debits } from "../components/charts/Debits";
 import { Production } from "../components/charts/Production";
 import { Accumulated } from "../components/charts/Accumulated";
 import Skeleton from '@mui/material/Skeleton';
-import CircularProgress from '@mui/material/CircularProgress';
 
 //
 //<CircularProgress sx={{ marginLeft: '50%' }} />
@@ -33,7 +32,7 @@ const Dashboard = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Skeleton variant="rectangular" width="100%" height="100%">
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                    <Debits />
+                                    <Production />
                                 </Paper>
                             </Skeleton>
                         </Grid>
@@ -50,7 +49,7 @@ const Dashboard = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Skeleton variant="rectangular" width="100%" height="100%">
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                    <Accumulated />
+                                    <Production />
                                 </Paper>
                             </Skeleton>
                         </Grid>
@@ -58,7 +57,7 @@ const Dashboard = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Skeleton variant="rectangular" width="100%" height="100%">
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                    <Multitype />
+                                    <Production />
                                 </Paper>
                             </Skeleton>
                         </Grid>
@@ -66,7 +65,7 @@ const Dashboard = (props: any) => {
                         <Grid item xs={12}>
                             <Skeleton variant="rectangular" width="100%" height="100%">
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                    <Multitype />
+                                    <Production />
                                 </Paper>
                             </Skeleton>
                         </Grid>

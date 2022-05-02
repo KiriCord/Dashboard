@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import Table from "../components/table/table";
+import { Debits } from "../components/charts/Debits";
 
 const Tables = (props: any) => {
     return (

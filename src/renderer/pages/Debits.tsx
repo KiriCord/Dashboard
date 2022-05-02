@@ -43,13 +43,13 @@ const Debit = (props: any) => {
                                 <MultiLine />
                             </Paper>
                         </Grid>
-                        {/* Chart 4 */}
+                        {/* Chart 4  */}
                         <Grid item xs={12} md={6}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Multitype />
+                                <MultiLine />
                             </Paper>
                         </Grid>
-                        {/* Chart 5 */}
+                        {/* Chart 5  */}
                         <Grid item xs={12}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                                 <Debits />

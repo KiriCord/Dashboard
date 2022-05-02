@@ -82,10 +82,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Webpack
-.webpack/
-
-# Electron-Forge
-out/
-
 package-lock.json
+
+/node_modules
+/dist

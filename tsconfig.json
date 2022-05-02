@@ -30,7 +30,7 @@
         "src/renderer/components/*"
       ],
       "@common/*": [
-        "src/common/*"
+        "src/main/common/*"
       ],
       "@main/*": [
         "src/main/*"

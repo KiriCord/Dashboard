@@ -20,7 +20,7 @@ export const Sidebar = (
         <ListSubheader component="div" inset>
             Дашборд
         </ListSubheader>
-        <Link to="/main_window" style={{ textDecoration: 'none', color: '#202020' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: '#202020' }}>
             <ListItemButton >
                 <ListItemIcon>
                     <DashboardIcon />
