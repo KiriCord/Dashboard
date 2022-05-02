@@ -8,16 +8,16 @@
 git clone https://github.com/KiriCord/Dashboard.git
 ```
 
-Используйте npm или yarn
+Используйте yarn
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Запуск
 
 ```bash
-npm start
+yarn dev
 ```
 
 ## Ресурсы
@@ -37,12 +37,9 @@ https://ru.reactjs.org/tutorial/tutorial.html<br/>
 https://ru.reactjs.org/docs/getting-started.html<br/>
 Electron:<br/>
 https://www.electronjs.org/ru/docs/latest<br/>
-https://www.electronforge.io/<br/>
 Security<br/>
 https://www.electronjs.org/docs/latest/tutorial/security<br/>
 https://habr.com/ru/post/578016/<br/>
-WebSocket vs IPC<br/>
-https://www.scriptol.com/javascript/ipc-vs-websocket.php<br/>
 Other:<br/>
 https://blog.logrocket.com/building-a-menu-bar-application-with-electron-and-react/<br/>
 https://www.electronjs.org/docs/latest/api/ipc-main<br/>
