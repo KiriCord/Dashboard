@@ -6,7 +6,6 @@ import { Debits } from "../components/charts/Debits";
 import { Production } from "../components/charts/Production";
 import { Accumulated } from "../components/charts/Accumulated";
 import Skeleton from '@mui/material/Skeleton';
-
 //
 //<CircularProgress sx={{ marginLeft: '50%' }} />
 

@@ -22,7 +22,7 @@ yarn dev
 
 ## Ресурсы
 
-Собственный Шаблон Electron-React-TypeScript - https://github.com/KiriCord/electron-react-ts<br/>
+ESBuild - https://esbuild.github.io/<br/>
 
 TypeScript:<br/>
 http://typescript-lang.ru/docs/<br/>

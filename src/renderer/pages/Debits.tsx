@@ -4,6 +4,8 @@ import Container from '@mui/material/Container';
 import { Multitype } from "../components/charts/Multitype";
 import { Debits } from "../components/charts/Debits";
 import { MultiLine } from "../components/charts/MultiLine";
+import { Chart } from "../components/charts/Chart";
+
 
 const Debit = (props: any) => {
     return (
@@ -27,7 +29,7 @@ const Debit = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <MultiLine />
+                                <Chart />
                             </Paper>
                         </Grid>
                         {/* Chart 2 */}
