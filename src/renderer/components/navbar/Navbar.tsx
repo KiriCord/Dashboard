@@ -7,7 +7,7 @@ import List from '@mui/material/List';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Sidebar, SecondSidebar } from "../sidebar/Sidebar";
 import Divider from '@mui/material/Divider';
-import StatusServer from './StatusServer';
+import { StatusServer } from './StatusServer';
 
 import React from 'react';
 
@@ -106,7 +106,8 @@ const Navbar = () => {
                     >
                         Статус сервера
                     </Typography>
-                    <StatusServer overlap="circular" variant="dot"></StatusServer>
+                    <StatusServer ></StatusServer >
+                    {/* <StatusServer /> */}
                 </Toolbar>
             </AppBar>
 

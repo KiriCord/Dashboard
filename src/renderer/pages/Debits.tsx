@@ -5,9 +5,10 @@ import { Multitype } from "../components/charts/Multitype";
 import { Debits } from "../components/charts/Debits";
 import { MultiLine } from "../components/charts/MultiLine";
 import { Chart } from "../components/charts/Chart";
+import { CharProps } from "../types";
 
 
-const Debit = (props: any) => {
+const Debit = (props: CharProps) => {
     return (
         <>
             <Box
@@ -29,7 +30,7 @@ const Debit = (props: any) => {
                         <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Chart />
+                                <Chart data={props.data} />
                             </Paper>
                         </Grid>
                         {/* Chart 2 */}

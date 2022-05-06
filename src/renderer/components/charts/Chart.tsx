@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { Mer, CharProps as ChartProps } from "../../types";
 
 ChartJS.register(
   CategoryScale,
@@ -51,16 +52,17 @@ const options = {
   },
 };
 
-type Mer = {
-  gas: Number,
-  oil: Number,
-  dt: String
-}
+export function Chart(props: ChartProps) {
+  const toDate = (mer: Mer) => {
+    const date = new Date(mer["dt"] as string);
+    const month = date.getMonth() + 1;
+    return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
+  }
 
-export function Chart() {
-  const [gas, setGas] = useState([]);
-  const [oil, setOil] = useState([]);
-  const [labels, setLabels] = useState(['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']);
+  const labels = props.data.map(toDate);
+  const gas = props.data.map(item => item["gas"]);
+  const oil = props.data.map(item => item["oil"]);
+
   const chartData = {
     labels: labels,
     datasets: [{
@@ -82,27 +84,6 @@ export function Chart() {
     ]
 
   };
-
-
-  const fetchData = (well_id: string) =>
-    fetch(`http://127.0.0.1:8000/mer/${well_id}`).then(req => req.json()).then(newData => {
-      setGas(newData.map((item: Mer) => item["gas"]));
-      setOil(newData.map((item: Mer) => item["oil"]));
-      setLabels(newData.map((item: Mer) => {
-        const date = new Date(item["dt"] as string);
-        const month = date.getMonth() + 1;
-        return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
-      }))
-    });
-  useEffect(() => {
-    const eventSource = new EventSource("http://127.0.0.1:8000/events");
-    eventSource.onmessage = event => {
-      console.log(event.data)
-      fetchData(event.data);
-    }
-    return () => eventSource.close();
-  }, []);
-
 
   return <Line options={options} data={chartData} />;
 }
