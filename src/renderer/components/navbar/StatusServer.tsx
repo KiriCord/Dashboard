@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 
-// backgroundColor: '#44b700',
-// color: '#44b700',
-
 const StatusServerClose = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         backgroundColor: '#b80000',

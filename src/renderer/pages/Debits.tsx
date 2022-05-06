@@ -1,7 +1,6 @@
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { Multitype } from "../components/charts/Multitype";
 import { Debits } from "../components/charts/Debits";
 import { MultiLine } from "../components/charts/MultiLine";
 import { Chart } from "../components/charts/Chart";

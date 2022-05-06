@@ -1,19 +1,8 @@
 import * as path from 'path'
-//import { format } from 'url'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { is } from 'electron-util'
-import { Client } from './Client';
-import { SocketIoService } from './SocketIoService';
 
 let win: BrowserWindow | null = null
-
-let testMsg = {
-  event: "onClose",
-  data: {
-    a: 5,
-    b: 7
-  }
-}
 
 async function createWindow() {
   win = new BrowserWindow({
@@ -51,22 +40,6 @@ async function createWindow() {
       }).toString(),
     )
   }
-
-  ipcMain.on("toMain", (event, data) => {
-
-    /*let client = new Client("ws://localhost:8999");
-    client.onMessage((message: any) => {
-      let mess = JSON.parse(message.toString())
-      win?.webContents.send("fromMain", mess);
-      console.log('[Server]', mess.data);
-    });
-
-    client.onClose(() => {
-      win?.webContents.send("fromMain", testMsg);
-    })
-
-    console.log(`[Renderer]${data}`);*/
-  })
 
   win.on('closed', () => {
     win = null

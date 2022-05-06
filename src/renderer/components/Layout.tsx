@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 
 
-const Layout = (props: any) => {
+const Layout = () => {
 
     const mdTheme = createTheme({
         palette: {

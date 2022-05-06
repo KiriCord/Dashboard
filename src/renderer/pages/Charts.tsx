@@ -1,15 +1,10 @@
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { Multitype } from "../components/charts/Multitype";
-import { Debits } from "../components/charts/Debits";
 import { Production } from "../components/charts/Production";
-import { Accumulated } from "../components/charts/Accumulated";
 import Skeleton from '@mui/material/Skeleton';
-//
-//<CircularProgress sx={{ marginLeft: '50%' }} />
 
-const Dashboard = (props: any) => {
+const Dashboard = () => {
     return (
         <>
             <Box

@@ -106,8 +106,7 @@ const Navbar = () => {
                     >
                         Статус сервера
                     </Typography>
-                    <StatusServer ></StatusServer >
-                    {/* <StatusServer /> */}
+                    <StatusServer />
                 </Toolbar>
             </AppBar>
 
