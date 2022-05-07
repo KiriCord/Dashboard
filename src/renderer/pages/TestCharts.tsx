@@ -5,6 +5,7 @@ import { Debits } from "../components/charts/Debits";
 import { MultiLine } from "../components/charts/MultiLine";
 import { Chart } from "../components/charts/Chart";
 import { CharProps } from "../types";
+import { TestChart } from '@components/charts/Test';
 
 const TestCharts = () => {
     return (
@@ -27,34 +28,36 @@ const TestCharts = () => {
                         {/* Chart 1*/}
                         <Grid item xs={12} md={6}>
                             <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+                                sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                 {/* <Chart data={props.data} /> */}
-
+                                <TestChart />
                             </Paper>
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
                             <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-
+                                sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                {/* <div style={{ height: "100%", width: "100%" }}> */}
+                                <TestChart />
+                                {/* </div> */}
                             </Paper>
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
+                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                <TestChart />
                             </Paper>
                         </Grid>
                         {/* Chart 4  */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
+                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                <TestChart />
                             </Paper>
                         </Grid>
                         {/* Chart 5  */}
                         <Grid item xs={12}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
+                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
+                                <TestChart />
                             </Paper>
                         </Grid>
                     </Grid>
