@@ -10,6 +10,7 @@ import Divider from '@mui/material/Divider';
 import { StatusServer } from './StatusServer';
 
 import React from 'react';
+import { isOnlineProps } from '@renderer/types';
 
 const drawerWidth: number = 240;
 
@@ -62,7 +63,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 
-const Navbar = () => {
+const Navbar = (props: isOnlineProps) => {
 
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -106,7 +107,7 @@ const Navbar = () => {
                     >
                         Статус сервера
                     </Typography>
-                    <StatusServer />
+                    <StatusServer isOnline={props.isOnline} />
                 </Toolbar>
             </AppBar>
 

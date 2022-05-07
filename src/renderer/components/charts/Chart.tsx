@@ -71,6 +71,7 @@ export function Chart(props: ChartProps) {
       fill: true,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1,
+      lineTension: 0.5,
       yAxisID: 'y'
     },
     {
@@ -78,6 +79,7 @@ export function Chart(props: ChartProps) {
       data: oil,
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      lineTension: 0.5,
       fill: true,
       yAxisID: 'y1',
     },

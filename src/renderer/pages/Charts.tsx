@@ -1,10 +1,19 @@
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from '@mui/material/Container';
 import { Production } from "../components/charts/Production";
 import Skeleton from '@mui/material/Skeleton';
+import { isOnlineProps } from '@renderer/types';
 
-const Dashboard = () => {
+export function Charts(props: isOnlineProps) {
+    // const [isOnline, setOnline] = useState(false);
+
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         fetch("http://127.0.0.1:8000/").then(res => setOnline(true)).catch(err => setOnline(false));
+    //     }, 3000);
+    // }, []);
+
     return (
         <>
             <Box
@@ -24,50 +33,75 @@ const Dashboard = () => {
                     <Grid container spacing={2}>
                         {/* Chart 1*/}
                         <Grid item xs={12} md={6}>
-                            <Skeleton variant="rectangular" width="100%" height="100%">
+                            {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
                                     <Production />
                                 </Paper>
-                            </Skeleton>
+                                :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+                                        <Production />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
-                            <Skeleton variant="rectangular" width="100%" height="100%">
+                            {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
                                     <Production />
-                                </Paper>
-                            </Skeleton>
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+                                        <Production />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
-                            <Skeleton variant="rectangular" width="100%" height="100%">
+                            {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                                     <Production />
-                                </Paper>
-                            </Skeleton>
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                        <Production />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 4 */}
                         <Grid item xs={12} md={6}>
-                            <Skeleton variant="rectangular" width="100%" height="100%">
+                            {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                                     <Production />
-                                </Paper>
-                            </Skeleton>
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                        <Production />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 5 */}
                         <Grid item xs={12}>
-                            <Skeleton variant="rectangular" width="100%" height="100%">
+                            {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                                     <Production />
-                                </Paper>
-                            </Skeleton>
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                                        <Production />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                     </Grid>
                 </Container>
             </Box>
         </>
     );
-}
-
-export default Dashboard;
+};

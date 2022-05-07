@@ -36,12 +36,14 @@ export const Sidebar = (
                 <ListItemText primary="Дебиты по МЭР" />
             </ListItemButton>
         </Link>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssessmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Оценка" />
-        </ListItemButton>
+        <Link to="/test" style={{ textDecoration: 'none', color: '#202020' }}>
+            <ListItemButton>
+                <ListItemIcon>
+                    <AssessmentIcon />
+                </ListItemIcon>
+                <ListItemText primary="Оценка" />
+            </ListItemButton>
+        </Link>
         <ListItemButton>
             <ListItemIcon>
                 <AssignmentIcon />

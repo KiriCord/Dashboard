@@ -7,3 +7,11 @@ export type Mer = {
 export type CharProps = {
   data: Mer[];
 }
+
+export type InfoWellProps = {
+  WellId: string;
+}
+
+export type isOnlineProps = {
+  isOnline: boolean;
+}

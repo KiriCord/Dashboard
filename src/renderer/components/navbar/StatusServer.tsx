@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+import { isOnlineProps } from '@renderer/types';
 
 const StatusServerClose = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -60,16 +61,17 @@ const StatusServerActive = styled(Badge)(({ theme }) => ({
     },
 }));
 
-export function StatusServer() {
-    const [isOnline, setOnline] = useState(false);
-
-    setInterval(() => {
-        fetch("http://127.0.0.1:8000/").then(res => setOnline(true)).catch(err => setOnline(false));
-    }, 2000);
+export function StatusServer(props: isOnlineProps) {
+    // const [isOnline, setOnline] = useState(false);
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         fetch("http://127.0.0.1:8000/").then(res => setOnline(true)).catch(err => setOnline(false));
+    //     }, 3000);
+    // }, []);
 
     return (
         <>
-            {isOnline ? <StatusServerActive overlap="circular" variant="dot" /> : <StatusServerClose overlap="circular" variant="dot" />}
+            {props.isOnline ? <StatusServerActive overlap="circular" variant="dot" /> : <StatusServerClose overlap="circular" variant="dot" />}
         </>
     );
 };

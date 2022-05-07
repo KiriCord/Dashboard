@@ -4,11 +4,9 @@ import Container from '@mui/material/Container';
 import { Debits } from "../components/charts/Debits";
 import { MultiLine } from "../components/charts/MultiLine";
 import { Chart } from "../components/charts/Chart";
-import { CharProps, InfoWellProps } from "../types";
-import { InfoWell } from '@components/info/infowell';
+import { CharProps } from "../types";
 
-
-const Debit = (props: CharProps & InfoWellProps) => {
+const TestCharts = () => {
     return (
         <>
             <Box
@@ -30,32 +28,33 @@ const Debit = (props: CharProps & InfoWellProps) => {
                         <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
-                                <Chart data={props.data} />
+                                {/* <Chart data={props.data} /> */}
+
                             </Paper>
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
                             <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', height: "100%" }}>
-                                <InfoWell WellId={props.WellId} />
+                                sx={{ p: 2, display: 'flex', flexDirection: 'column', }}>
+
                             </Paper>
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <MultiLine />
+
                             </Paper>
                         </Grid>
                         {/* Chart 4  */}
                         <Grid item xs={12} md={6}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <MultiLine />
+
                             </Paper>
                         </Grid>
                         {/* Chart 5  */}
                         <Grid item xs={12}>
                             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                                <Debits />
+
                             </Paper>
                         </Grid>
                     </Grid>
@@ -65,4 +64,4 @@ const Debit = (props: CharProps & InfoWellProps) => {
     );
 }
 
-export default Debit;
+export default TestCharts;
