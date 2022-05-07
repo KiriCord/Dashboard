@@ -62,13 +62,6 @@ const StatusServerActive = styled(Badge)(({ theme }) => ({
 }));
 
 export function StatusServer(props: isOnlineProps) {
-    // const [isOnline, setOnline] = useState(false);
-    // useEffect(() => {
-    //     setInterval(() => {
-    //         fetch("http://127.0.0.1:8000/").then(res => setOnline(true)).catch(err => setOnline(false));
-    //     }, 3000);
-    // }, []);
-
     return (
         <>
             {props.isOnline ? <StatusServerActive overlap="circular" variant="dot" /> : <StatusServerClose overlap="circular" variant="dot" />}
