@@ -72,24 +72,12 @@ const Navbar = (props: isOnlineProps) => {
 
     return (
         <>
-            <AppBar position="absolute" open={open}>
+            <AppBar position="fixed">
                 <Toolbar
                     sx={{
                         pr: '24px',
                     }}
                 >
-                    <IconButton
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={toggleDrawer}
-                        sx={{
-                            marginRight: '36px',
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
                     <Typography
                         component="h1"
                         variant="h6"
