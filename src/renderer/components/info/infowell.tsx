@@ -1,16 +1,21 @@
 import React from "react";
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import { InfoWellProps } from "@renderer/types";
+import { ChartProps, InfoWellProps, Mer } from "@renderer/types";
+import Title from "./Title";
 
 
+export const InfoWell = (props: InfoWellProps & ChartProps) => {
+    const toDate = (mer: Mer) => {
+        const date = new Date(mer["dt"] as string);
+        const month = date.getMonth() + 1;
+        return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
+    }
 
-export const InfoWell = (props: InfoWellProps) => {
+    const labels = props.data.map(toDate);
+
     return (
         <>
-            <Typography color="primary" align='center' component="div" variant="h5" gutterBottom>
-                Информация о скважине
-            </Typography>
+            <Title>Информация о скважине</Title>
             <Typography component="p" variant="subtitle1">
                 Месторождение - Овальное
             </Typography>
@@ -18,8 +23,9 @@ export const InfoWell = (props: InfoWellProps) => {
                 Номер скважены - {props.WellId}
             </Typography>
             <Typography color="text.secondary" sx={{ flex: 1 }}>
-                01/2010 - 05/2015
+                с {labels.find(Boolean)} по {labels[labels.length - 1]}
             </Typography>
+
         </>
     );
 }
