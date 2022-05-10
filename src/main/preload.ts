@@ -1,7 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-console.log("Работает");
-
 const messageApi = {
     send: (channel: string, data: any) => {
         return ipcRenderer.send(channel, data);
