@@ -19,6 +19,8 @@ async function createWindow() {
     show: false,
   })
 
+  win.setMenuBarVisibility(false);
+
   const isDev = is.development;
 
   function urlFromComponents({ pathname = '/', protocol = 'https:', hostname = 'test', ...props } = {}) {
