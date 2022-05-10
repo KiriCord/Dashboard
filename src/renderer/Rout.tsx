@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Tables from "./pages/Tables";
-import { Charts } from "./pages/Charts";
+import { AllCharts } from "./pages/AllCharts";
 import Debits from "./pages/Debits";
 import Navbar from "./components/navbar/Navbar";
 import TestCharts from './pages/TestCharts';
@@ -36,10 +36,10 @@ const router = () => {
         <BrowserRouter>
             <Navbar isOnline={isOnline} />
             <Routes>
-                <Route path="/" element={<Charts isOnline={isOnline} />} />
-                <Route path="/debit" element={<Debits data={mer} WellId={wellId} />} />
-                <Route path="/table" element={<Tables />} />
-                <Route path="/test" element={<TestCharts />} />
+                <Route path="/" element={<AllCharts data={mer} WellId={wellId} isOnline={isOnline} />} />
+                <Route path="/debit" element={<Debits data={mer} WellId={wellId} isOnline={isOnline} />} />
+                <Route path="/table" element={<Tables data={mer} WellId={wellId} isOnline={isOnline} />} />
+                <Route path="/test" element={<TestCharts data={mer} WellId={wellId} isOnline={isOnline} />} />
                 <Route path='*' element={<h1>204</h1>} />
             </Routes>
         </BrowserRouter>
