@@ -1,10 +1,13 @@
 export type Mer = {
-  gas: Number,
-  oil: Number,
-  dt: String
+  charwork: number;
+  dt: string;
+  gas: number;
+  liq: number;
+  oil: number;
+  priem: number;
 }
 
-export type CharProps = {
+export type ChartProps = {
   data: Mer[];
 }
 
