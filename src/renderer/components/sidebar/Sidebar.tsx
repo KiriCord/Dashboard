@@ -18,14 +18,14 @@ import { Link } from 'react-router-dom';
 export const Sidebar = (
     <React.Fragment>
         <ListSubheader component="div" inset>
-            Дашборд
+            Графики
         </ListSubheader>
         <Link to="/" style={{ textDecoration: 'none', color: '#202020' }}>
             <ListItemButton >
                 <ListItemIcon>
                     <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary="Графики" />
+                <ListItemText primary="Общее" />
             </ListItemButton>
         </Link>
         <Link to="/debit" style={{ textDecoration: 'none', color: '#202020' }}>
@@ -33,7 +33,7 @@ export const Sidebar = (
                 <ListItemIcon>
                     <BarChartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Дебиты по МЭР" />
+                <ListItemText primary="Нефть" />
             </ListItemButton>
         </Link>
         <Link to="/test" style={{ textDecoration: 'none', color: '#202020' }}>
@@ -41,14 +41,14 @@ export const Sidebar = (
                 <ListItemIcon>
                     <AssessmentIcon />
                 </ListItemIcon>
-                <ListItemText primary="Оценка" />
+                <ListItemText primary="Газ" />
             </ListItemButton>
         </Link>
         <ListItemButton>
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Меню 1" />
+            <ListItemText primary="Жидкость" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
@@ -69,7 +69,7 @@ export const SecondSidebar = (
                 <ListItemIcon>
                     <TableChartIcon />
                 </ListItemIcon>
-                <ListItemText primary="Таблица 1" />
+                <ListItemText primary="МЭР" />
             </ListItemButton>
         </Link>
         <ListItemButton>
