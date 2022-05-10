@@ -1,13 +1,10 @@
-import { Box, Toolbar, Grid, Paper } from '@mui/material';
+import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { Debits } from "../components/charts/Debits";
-import { MultiLine } from "../components/charts/MultiLine";
-import { Chart } from "../components/charts/Chart";
-import { CharProps } from "../types";
+import { ChartProps, InfoWellProps, isOnlineProps } from "../types";
 import { TestChart } from '@components/charts/Test';
 
-const TestCharts = () => {
+const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
     return (
         <>
             <Box
@@ -27,38 +24,76 @@ const TestCharts = () => {
                     <Grid container spacing={2}>
                         {/* Chart 1*/}
                         <Grid item xs={12} md={6}>
-                            <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                {/* <Chart data={props.data} /> */}
-                                <TestChart />
-                            </Paper>
+                            {props.isOnline ?
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    {/* <Chart data={props.data} /> */}
+                                    <TestChart data={props.data} />
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                        {/* <Chart data={props.data} /> */}
+                                        <TestChart data={props.data} />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 2 */}
                         <Grid item xs={12} md={6}>
-                            <Paper
-                                sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                {/* <div style={{ height: "100%", width: "100%" }}> */}
-                                <TestChart />
-                                {/* </div> */}
-                            </Paper>
+                            {props.isOnline ?
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    {/* <div style={{ height: "100%", width: "100%" }}> */}
+                                    <TestChart data={props.data} />
+                                    {/* </div> */}
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                        <TestChart data={props.data} />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 3 */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                <TestChart />
-                            </Paper>
+                            {props.isOnline ?
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    <TestChart data={props.data} />
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                        <TestChart data={props.data} />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 4  */}
                         <Grid item xs={12} md={6}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                <TestChart />
-                            </Paper>
+                            {props.isOnline ?
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    <TestChart data={props.data} />
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                        <TestChart data={props.data} />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                         {/* Chart 5  */}
                         <Grid item xs={12}>
-                            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                <TestChart />
-                            </Paper>
+                            {props.isOnline ?
+                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
+                                    <TestChart data={props.data} />
+                                </Paper> :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
+                                        <TestChart data={props.data} />
+                                    </Paper>
+                                </Skeleton>
+                            }
                         </Grid>
                     </Grid>
                 </Container>
