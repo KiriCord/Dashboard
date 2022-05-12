@@ -8,6 +8,9 @@ import { InfoWell } from '@components/info/Infowell';
 import { OilLiqGasBar } from '@components/charts/Production/OilLiqGasBar';
 import { OilLiqGasBrushBar } from '@components/charts/Production/OilLiqGasBrushBar';
 import { OilLiqGasPie } from '@components/charts/Production/OilLiqGasPie';
+import { CurrentPerfomance } from '@components/info/CurrentPerfomance';
+import { AccumPerfomance } from '@components/info/AccumPerfomance';
+import { ActualGTM } from '@components/info/ActualGTM';
 
 export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
     return (
@@ -27,7 +30,7 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                 <Toolbar />
                 <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                     <Grid container spacing={2}>
-                        {/* Chart 1*/}
+                        {/* Item 1*/}
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
@@ -41,7 +44,7 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 2 */}
+                        {/* Item 2 */}
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper
@@ -56,7 +59,55 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 3 */}
+                        {/* Item 3 */}
+                        <Grid item xs={12} lg={4} md={4}>
+                            {props.isOnline ?
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                    <CurrentPerfomance data={props.data} WellId={props.WellId} />
+                                </Paper>
+                                :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                        <CurrentPerfomance data={props.data} WellId={props.WellId} />
+                                    </Paper>
+                                </Skeleton>
+                            }
+                        </Grid>
+                        {/* Item 4 */}
+                        <Grid item xs={12} lg={4} md={4}>
+                            {props.isOnline ?
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                    <AccumPerfomance data={props.data} WellId={props.WellId} />
+                                </Paper>
+                                :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                        <AccumPerfomance data={props.data} WellId={props.WellId} />
+                                    </Paper>
+                                </Skeleton>
+                            }
+                        </Grid>
+                        {/* Item 5 */}
+                        <Grid item xs={12} lg={4} md={4}>
+                            {props.isOnline ?
+                                <Paper
+                                    sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                    <ActualGTM data={props.data} WellId={props.WellId} />
+                                </Paper>
+                                :
+                                <Skeleton variant="rectangular" width="100%" height="100%">
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
+                                        <ActualGTM data={props.data} WellId={props.WellId} />
+                                    </Paper>
+                                </Skeleton>
+                            }
+                        </Grid>
+                        {/* Item 6 */}
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
@@ -69,7 +120,7 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 4 */}
+                        {/* Chart 7 */}
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
