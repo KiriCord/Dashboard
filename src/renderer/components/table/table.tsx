@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MUIDataTable from "mui-datatables";
-import { ChartProps, InfoWellProps, Mer } from '@renderer/types';
+import { MerProps, InfoWellProps, Mer } from '@renderer/types';
 
 const columns = ["Дата", "Характер работы", "Добыто газа", "Добыто жидкости", "Добыто нефти", "Приемистость"];
 
@@ -42,19 +42,19 @@ const options = {
     rowsPerPageOptions: [12, 24, 48, 96],
 };
 
-export default function DataTables(props: ChartProps & InfoWellProps) {
+export default function DataTables(props: MerProps & InfoWellProps) {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
         return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
     }
 
-    const charwork = props.data.map(item => item["charwork"]);
-    const dt = props.data.map(toDate);
-    const gas = props.data.map(item => item["gas"]);
-    const liq = props.data.map(item => item["liq"]);
-    const oil = props.data.map(item => item["oil"]);
-    const priem = props.data.map(item => item["priem"]);
+    const charwork = props.dataMer.map(item => item["charwork"]);
+    const dt = props.dataMer.map(toDate);
+    const gas = props.dataMer.map(item => item["gas"]);
+    const liq = props.dataMer.map(item => item["liq"]);
+    const oil = props.dataMer.map(item => item["oil"]);
+    const priem = props.dataMer.map(item => item["priem"]);
 
 
 

@@ -1,12 +1,13 @@
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { ChartProps, InfoWellProps } from "@renderer/types";
+import { InfoWellProps, MerSumCumProps } from "@renderer/types";
 import Title from "./Title";
 import { Box } from "@mui/material";
 
+export const CurrentPerfomance = (props: InfoWellProps & MerSumCumProps) => {
 
-export const CurrentPerfomance = (props: InfoWellProps & ChartProps) => {
-
+    //таблица trinj
+    //поля FactPriem
     return (
         <>
             <Title>Текущие показатели</Title>

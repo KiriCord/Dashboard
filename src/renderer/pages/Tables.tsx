@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import Table from "../components/table/table";
-import { ChartProps, InfoWellProps, isOnlineProps } from '@renderer/types';
+import { MerProps, InfoWellProps, isOnlineProps } from '@renderer/types';
 
-const Tables = (props: ChartProps & InfoWellProps & isOnlineProps) => {
+const Tables = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
         <Box
             component="main"
@@ -20,7 +20,7 @@ const Tables = (props: ChartProps & InfoWellProps & isOnlineProps) => {
             <Toolbar />
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <Table data={props.data} WellId={props.WellId} />
+                    <Table dataMer={props.dataMer} WellId={props.WellId} />
                 </Grid>
             </Grid>
         </Box>

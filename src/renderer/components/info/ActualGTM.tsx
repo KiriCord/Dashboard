@@ -1,10 +1,10 @@
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { ChartProps, InfoWellProps } from "@renderer/types";
+import { MerProps, InfoWellProps } from "@renderer/types";
 import Title from "./Title";
 import { Box } from "@mui/material";
 
-export const ActualGTM = (props: InfoWellProps & ChartProps) => {
+export const ActualGTM = (props: InfoWellProps & MerProps) => {
 
     return (
         <>

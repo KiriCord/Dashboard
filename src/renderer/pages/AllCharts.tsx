@@ -2,7 +2,7 @@ import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
 import Skeleton from '@mui/material/Skeleton';
-import { ChartProps, isOnlineProps, InfoWellProps } from '@renderer/types';
+import { MerProps, isOnlineProps, InfoWellProps, MerSumCumProps } from '@renderer/types';
 import { OilLiqGasArea } from '@components/charts/Production/OilLiqGasArea';
 import { InfoWell } from '@components/info/Infowell';
 import { OilLiqGasBar } from '@components/charts/Production/OilLiqGasBar';
@@ -12,7 +12,7 @@ import { CurrentPerfomance } from '@components/info/CurrentPerfomance';
 import { AccumPerfomance } from '@components/info/AccumPerfomance';
 import { ActualGTM } from '@components/info/ActualGTM';
 
-export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
+export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isOnlineProps) {
     return (
         <>
             <Box
@@ -34,12 +34,12 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <OilLiqGasPie data={props.data} />
+                                    <OilLiqGasPie dataMer={props.dataMer} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <OilLiqGasPie data={props.data} />
+                                        <OilLiqGasPie dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -49,12 +49,12 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <InfoWell data={props.data} WellId={props.WellId} />
+                                    <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <InfoWell data={props.data} WellId={props.WellId} />
+                                        <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -64,13 +64,13 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <CurrentPerfomance data={props.data} WellId={props.WellId} />
+                                    <CurrentPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <CurrentPerfomance data={props.data} WellId={props.WellId} />
+                                        <CurrentPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -80,13 +80,13 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <AccumPerfomance data={props.data} WellId={props.WellId} />
+                                    <AccumPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <AccumPerfomance data={props.data} WellId={props.WellId} />
+                                        <AccumPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -96,13 +96,13 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <ActualGTM data={props.data} WellId={props.WellId} />
+                                    <ActualGTM dataMer={props.dataMer} WellId={props.WellId} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <ActualGTM data={props.data} WellId={props.WellId} />
+                                        <ActualGTM dataMer={props.dataMer} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -111,11 +111,11 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <OilLiqGasBrushBar data={props.data} />
+                                    <OilLiqGasBrushBar dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <OilLiqGasBrushBar data={props.data} />
+                                        <OilLiqGasBrushBar dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -124,11 +124,11 @@ export function AllCharts(props: ChartProps & InfoWellProps & isOnlineProps) {
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <OilLiqGasArea data={props.data} />
+                                    <OilLiqGasArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <OilLiqGasArea data={props.data} />
+                                        <OilLiqGasArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }

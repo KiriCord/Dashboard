@@ -1,17 +1,17 @@
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { ChartProps, InfoWellProps, Mer } from "@renderer/types";
+import { MerProps, InfoWellProps, Mer } from "@renderer/types";
 import Title from "./Title";
 
 
-export const InfoWell = (props: InfoWellProps & ChartProps) => {
+export const InfoWell = (props: InfoWellProps & MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
         return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
     }
 
-    const labels = props.data.map(toDate);
+    const labels = props.dataMer.map(toDate);
 
     return (
         <>

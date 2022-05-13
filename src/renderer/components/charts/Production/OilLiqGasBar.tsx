@@ -1,7 +1,7 @@
 import Title from '@components/info/Title';
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { ChartProps, Mer } from "../../../types";
+import { MerProps, Mer } from "../../../types";
 
 
 function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[]) {
@@ -12,17 +12,17 @@ function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[
 }
 
 
-export const OilLiqGasBar = (props: ChartProps) => {
+export const OilLiqGasBar = (props: MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
         return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
     }
 
-    const labelShorted = props.data.map(toDate).filter((e, i) => (++i) % 40 === 0);
-    const gasShorted = props.data.map(item => item["gas"]).filter((e, j) => (++j) % 40 === 0);
-    const oilShorted = props.data.map(item => item["oil"]).filter((e, k) => (++k) % 40 === 0);
-    const liqShorted = props.data.map(item => item["liq"]).filter((e, k) => (++k) % 40 === 0);
+    const labelShorted = props.dataMer.map(toDate).filter((e, i) => (++i) % 40 === 0);
+    const gasShorted = props.dataMer.map(item => item["gas"]).filter((e, j) => (++j) % 40 === 0);
+    const oilShorted = props.dataMer.map(item => item["oil"]).filter((e, k) => (++k) % 40 === 0);
+    const liqShorted = props.dataMer.map(item => item["liq"]).filter((e, k) => (++k) % 40 === 0);
 
     return (
         <>

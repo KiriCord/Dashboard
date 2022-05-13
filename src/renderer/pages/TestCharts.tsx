@@ -1,10 +1,10 @@
 import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { ChartProps, InfoWellProps, isOnlineProps } from "../types";
+import { MerProps, InfoWellProps, isOnlineProps } from "../types";
 import { TestChart } from '@components/charts/Test';
 
-const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
+const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
         <>
             <Box
@@ -28,13 +28,13 @@ const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                     {/* <Chart data={props.data} /> */}
-                                    <TestChart data={props.data} />
+                                    <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                         {/* <Chart data={props.data} /> */}
-                                        <TestChart data={props.data} />
+                                        <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -45,13 +45,13 @@ const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                     {/* <div style={{ height: "100%", width: "100%" }}> */}
-                                    <TestChart data={props.data} />
+                                    <TestChart dataMer={props.dataMer} />
                                     {/* </div> */}
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart data={props.data} />
+                                        <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -60,11 +60,11 @@ const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart data={props.data} />
+                                    <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart data={props.data} />
+                                        <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -73,11 +73,11 @@ const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart data={props.data} />
+                                    <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart data={props.data} />
+                                        <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -86,11 +86,11 @@ const TestCharts = (props: ChartProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <TestChart data={props.data} />
+                                    <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <TestChart data={props.data} />
+                                        <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }

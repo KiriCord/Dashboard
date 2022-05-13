@@ -12,7 +12,7 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts';
-import { ChartProps, Mer } from "../../../types";
+import { MerProps, Mer } from "../../../types";
 
 
 function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[]) {
@@ -23,17 +23,17 @@ function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[
 }
 
 
-export const OilLiqGasBrushBar = (props: ChartProps) => {
+export const OilLiqGasBrushBar = (props: MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
         return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
     }
 
-    const labelShorted = props.data.map(toDate);
-    const gasShorted = props.data.map(item => item["gas"]);
-    const oilShorted = props.data.map(item => item["oil"]);
-    const liqShorted = props.data.map(item => item["liq"]);
+    const labelShorted = props.dataMer.map(toDate);
+    const gasShorted = props.dataMer.map(item => item["gas"]);
+    const oilShorted = props.dataMer.map(item => item["oil"]);
+    const liqShorted = props.dataMer.map(item => item["liq"]);
 
     return (
         <>

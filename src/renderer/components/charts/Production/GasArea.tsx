@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from '@mui/material/styles';
 import { AreaChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend, CartesianGrid } from 'recharts';
-import { ChartProps, Mer } from "../../../types";
+import { MerProps, Mer } from "../../../types";
 
 
 function createData(labels: string[], gas: Number[]) {
@@ -11,15 +11,15 @@ function createData(labels: string[], gas: Number[]) {
     return res;
 }
 
-export const TestChart = (props: ChartProps) => {
+export const TestChart = (props: MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
         return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
     }
 
-    const labels = props.data.map(toDate);
-    const gas = props.data.map(item => item["gas"]);
+    const labels = props.dataMer.map(toDate);
+    const gas = props.dataMer.map(item => item["gas"]);
 
     const theme = useTheme();
     return (
