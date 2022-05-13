@@ -11,33 +11,20 @@ import { StatusServer } from './StatusServer';
 
 import React from 'react';
 import { isOnlineProps } from '@renderer/types';
+import { ToggleColorMode } from '@renderer/components/navbar/TogglingColor';
 
 const drawerWidth: number = 240;
 
-interface AppBarProps extends MuiAppBarProps {
-    open?: boolean;
-}
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open }) => ({
+const AppBar = styled(MuiAppBar)(({ theme }) => ({
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-        marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    }),
+    })
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
+const Drawer = styled(MuiDrawer)(
+    ({ theme }) => ({
         '& .MuiDrawer-paper': {
             position: 'relative',
             whiteSpace: 'nowrap',
@@ -45,30 +32,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
             transition: theme.transitions.create('width', {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.enteringScreen,
-            }),
-            boxSizing: 'border-box',
-            ...(!open && {
-                overflowX: 'hidden',
-                transition: theme.transitions.create('width', {
-                    easing: theme.transitions.easing.sharp,
-                    duration: theme.transitions.duration.leavingScreen,
-                }),
-                width: theme.spacing(7),
-                [theme.breakpoints.up('sm')]: {
-                    width: theme.spacing(9),
-                },
-            }),
+            })
         },
     }),
 );
 
 
 const Navbar = (props: isOnlineProps) => {
-
-    const [open, setOpen] = React.useState(true);
-    const toggleDrawer = () => {
-        setOpen(!open);
-    };
 
     return (
         <>
@@ -87,6 +57,12 @@ const Navbar = (props: isOnlineProps) => {
                     >
                         Дашборд
                     </Typography>
+                    {/* <ToggleColorMode />
+                    <Typography component="h1"
+                        variant="h6"
+                        color="inherit"
+                        noWrap
+                        sx={{ flexGrow: 8 }}>Test</Typography> */}
                     <Typography
                         variant="subtitle1"
                         color="inherit"
@@ -99,7 +75,7 @@ const Navbar = (props: isOnlineProps) => {
                 </Toolbar>
             </AppBar>
 
-            <Drawer variant="permanent" open={open}>
+            <Drawer variant="permanent">
                 <Toolbar
                     sx={{
                         display: 'flex',
@@ -108,9 +84,6 @@ const Navbar = (props: isOnlineProps) => {
                         px: [1],
                     }}
                 >
-                    <IconButton onClick={toggleDrawer}>
-                        <ChevronLeftIcon />
-                    </IconButton>
                 </Toolbar>
                 <Divider />
                 <List component="nav">

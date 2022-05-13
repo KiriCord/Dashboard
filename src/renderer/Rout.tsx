@@ -16,15 +16,16 @@ const router = () => {
     const [merSumCum, setMerSumCum] = useState([] as MerSumCum[]);
     const [trinj, setTrinj] = useState([] as Trinj[]);
 
-    const fetchDataMer = (wellId: string) =>
-        fetch(`http://127.0.0.1:8000/mer/${wellId}`).then(req => req.json()).then(newMer => setMer(newMer));
-
-    const fetchDataMersumcum = (wellId: string) =>
-        fetch(`http://127.0.0.1:8000/mersumcum/${wellId}`).then(req => req.json()).then(newMerSumCum => setMerSumCum(newMerSumCum));
-
-    const fetchDataTrinj = (wellId: string) =>
-        fetch(`http://127.0.0.1:8000/trinj/${wellId}`).then(req => req.json()).then(newTrinj => setTrinj(newTrinj));
-
+    const updateView = [
+        (wellId: string) =>
+            fetch(`http://127.0.0.1:8000/mer/${wellId}`).then(req => req.json()).then(newMer => setMer(newMer)),
+        (wellId: string) =>
+            fetch(`http://127.0.0.1:8000/mersumcum/${wellId}`).then(req => req.json()).then(newMerSumCum => setMerSumCum(newMerSumCum)),
+        (wellId: string) =>
+            fetch(`http://127.0.0.1:8000/trinj/${wellId}`).then(req => req.json()).then(newTrinj => setTrinj(newTrinj)),
+        setWellId,
+        console.log,
+    ];
 
     useEffect(() => {
         const eventSource = new EventSource("http://127.0.0.1:8000/events");
@@ -33,12 +34,8 @@ const router = () => {
         }
 
         eventSource.onmessage = event => {
-            console.log(event.data);
             setOnline(true)
-            setWellId(event.data);
-            fetchDataMer(event.data);
-            fetchDataMersumcum(event.data);
-            fetchDataTrinj(event.data);
+            updateView.map(f => f(event.data));
         }
         return () => eventSource.close();
     }, []);
