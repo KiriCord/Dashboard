@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Toolbar, Grid, Paper } from '@mui/material';
-import Table from "../components/table/table";
+import Table from "../components/table/TableMer";
 import { MerProps, InfoWellProps, isOnlineProps } from '@renderer/types';
 
-const Tables = (props: MerProps & InfoWellProps & isOnlineProps) => {
+const MerTable = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
         <Box
             component="main"
@@ -27,4 +27,4 @@ const Tables = (props: MerProps & InfoWellProps & isOnlineProps) => {
     );
 }
 
-export default Tables;
+export default MerTable;

@@ -2,11 +2,10 @@ import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
 import { MerProps, InfoWellProps, isOnlineProps } from "../types";
+import { GasArea } from '@components/charts/Production/GasArea';
 import { InfoWell } from '@components/info/Infowell';
-import { TestChart } from '@components/charts/Test';
 
-
-const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
+const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
         <>
             <Box
@@ -29,12 +28,14 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    {/* <Chart data={props.data} /> */}
+                                    <GasArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        {/* <Chart data={props.data} /> */}
+                                        <GasArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -44,7 +45,9 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    {/* <div style={{ height: "100%", width: "100%" }}> */}
                                     <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                    {/* </div> */}
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
@@ -58,12 +61,11 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    <GasArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper
-                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                        <GasArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -72,11 +74,11 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12} md={6}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    <GasArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        <GasArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -85,11 +87,11 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    <GasArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        <GasArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -101,4 +103,4 @@ const Debit = (props: MerProps & InfoWellProps & isOnlineProps) => {
     );
 }
 
-export default Debit;
+export default GasCharts;

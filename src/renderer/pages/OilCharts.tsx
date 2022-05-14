@@ -2,9 +2,11 @@ import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
 import { MerProps, InfoWellProps, isOnlineProps } from "../types";
+import { InfoWell } from '@components/info/Infowell';
 import { TestChart } from '@components/charts/Test';
 
-const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
+
+const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
         <>
             <Box
@@ -27,13 +29,11 @@ const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    {/* <Chart data={props.data} /> */}
                                     <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        {/* <Chart data={props.data} /> */}
                                         <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
@@ -44,14 +44,12 @@ const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    {/* <div style={{ height: "100%", width: "100%" }}> */}
-                                    <TestChart dataMer={props.dataMer} />
-                                    {/* </div> */}
+                                    <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -63,7 +61,8 @@ const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                     <TestChart dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
+                                    <Paper
+                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                         <TestChart dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
@@ -102,4 +101,4 @@ const TestCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     );
 }
 
-export default TestCharts;
+export default OilCharts;
