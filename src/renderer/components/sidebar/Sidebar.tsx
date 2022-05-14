@@ -10,6 +10,9 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import OilBarrelIcon from '@mui/icons-material/OilBarrel';
+import PropaneIcon from '@mui/icons-material/Propane';
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
 import { Link } from 'react-router-dom';
 
 export const Sidebar = (
@@ -23,29 +26,23 @@ export const Sidebar = (
             </ListItemIcon>
             <ListItemText primary="Общее" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/debit">
+        <ListItemButton component={Link} to="/charts/oil">
             <ListItemIcon>
-                <BarChartIcon />
+                <OilBarrelIcon />
             </ListItemIcon>
             <ListItemText primary="Нефть" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/test">
+        <ListItemButton component={Link} to="/charts/gas">
             <ListItemIcon>
-                <AssessmentIcon />
+                <PropaneIcon />
             </ListItemIcon>
             <ListItemText primary="Газ" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/charts/liq">
             <ListItemIcon>
-                <AssignmentIcon />
+                <LocalDrinkIcon />
             </ListItemIcon>
             <ListItemText primary="Жидкость" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <LayersIcon />
-            </ListItemIcon>
-            <ListItemText primary="Меню 2" />
         </ListItemButton>
     </React.Fragment>
 );
@@ -55,19 +52,17 @@ export const SecondSidebar = (
         <ListSubheader component="div" inset>
             Таблицы
         </ListSubheader>
-        <Link to="/table" style={{ textDecoration: 'none', color: '#202020' }}>
-            <ListItemButton>
-                <ListItemIcon>
-                    <TableChartIcon />
-                </ListItemIcon>
-                <ListItemText primary="МЭР" />
-            </ListItemButton>
-        </Link>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/table/mer">
             <ListItemIcon>
                 <TableChartIcon />
             </ListItemIcon>
-            <ListItemText primary="Таблица 2" />
+            <ListItemText primary="МЭР" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/table/dictelems">
+            <ListItemIcon>
+                <TableChartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dictelems" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
