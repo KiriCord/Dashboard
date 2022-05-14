@@ -18,6 +18,11 @@ export type Trinj = {
   factpriem: number;
 }
 
+export type Dictelems = {
+  id: number;
+  name: string;
+}
+
 export type MerProps = {
   dataMer: Mer[];
 }
@@ -28,6 +33,10 @@ export type MerSumCumProps = {
 
 export type TrinjProps = {
   dataTrinj: Trinj[];
+}
+
+export type DictelemsProps = {
+  dataDictelems: Dictelems[];
 }
 
 export type InfoWellProps = {
