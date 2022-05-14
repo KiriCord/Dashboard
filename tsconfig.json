@@ -29,9 +29,6 @@
       "@components/*": [
         "src/renderer/components/*"
       ],
-      "@common/*": [
-        "src/main/common/*"
-      ],
       "@main/*": [
         "src/main/*"
       ],
