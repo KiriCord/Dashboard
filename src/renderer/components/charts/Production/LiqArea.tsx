@@ -4,14 +4,14 @@ import { AreaChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, Lege
 import { MerProps, Mer } from "../../../types";
 
 
-function createData(labels: string[], oil: Number[]) {
+function createData(labels: string[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Нефть': oil[index] }
+        return { 'Дата': item, 'Жидкость': liq[index] }
     });
     return res;
 }
 
-export const OilArea = (props: MerProps) => {
+export const LiqArea = (props: MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
@@ -19,14 +19,14 @@ export const OilArea = (props: MerProps) => {
     }
 
     const labels = props.dataMer.map(toDate);
-    const oil = props.dataMer.map(item => item["oil"]);
+    const liq = props.dataMer.map(item => item["liq"]);
 
     const theme = useTheme();
     return (
         <>
             <ResponsiveContainer>
                 <AreaChart
-                    data={createData(labels, oil)}
+                    data={createData(labels, liq)}
                     margin={{
                         top: 0,
                         right: 25,
@@ -35,9 +35,9 @@ export const OilArea = (props: MerProps) => {
                     }}
                 >
                     <defs>
-                        <linearGradient id="colorOil" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                        <linearGradient id="colorLiq" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#82A6CA" stopOpacity={0.8} />
+                            <stop offset="95%" stopColor="#82A6CA" stopOpacity={0} />
                         </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -51,7 +51,7 @@ export const OilArea = (props: MerProps) => {
                         style={theme.typography.body2}
                     >
                     </YAxis>
-                    <Area type="monotone" dataKey="Нефть" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
+                    <Area type="monotone" dataKey="Жидкость" stroke="#82A6CA" fillOpacity={1} fill="url(#colorLiq)" />
                     <Tooltip />
                     <Legend />
                 </AreaChart>
