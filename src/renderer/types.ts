@@ -14,17 +14,33 @@ export type MerSumCum = {
   dt: string;
 };
 
+export type Troil = {
+  qliquid: number;
+  qnefti: number;
+  obvodnen: number;
+}
+
+export type MerCum = {
+  ql: number;
+  qn: number;
+  obvod: number;
+}
+
 export type Trinj = {
   factpriem: number;
 }
 
-export type Dictelems = {
-  id: number;
-  name: string;
-}
-
 export type MerProps = {
   dataMer: Mer[];
+}
+
+export type TroilProps =
+  {
+    dataTroil: Troil[];
+  }
+
+export type MerCumProps = {
+  dataMerCum: MerCum[];
 }
 
 export type MerSumCumProps = {
@@ -35,9 +51,6 @@ export type TrinjProps = {
   dataTrinj: Trinj[];
 }
 
-export type DictelemsProps = {
-  dataDictelems: Dictelems[];
-}
 
 export type InfoWellProps = {
   WellId: string;

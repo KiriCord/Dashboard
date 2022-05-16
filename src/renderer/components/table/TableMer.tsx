@@ -46,7 +46,7 @@ export default function DataTables(props: MerProps & InfoWellProps) {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
         const month = date.getMonth() + 1;
-        return `${month >= 10 ? month : "0" + month.toString()}/${date.getFullYear()}`
+        return `${month >= 10 ? month : "0" + month.toString()}.${date.getFullYear()}`
     }
 
     const charwork = props.dataMer.map(item => item["charwork"]);

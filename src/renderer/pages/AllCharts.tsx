@@ -2,7 +2,7 @@ import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
 import Skeleton from '@mui/material/Skeleton';
-import { MerProps, isOnlineProps, InfoWellProps, MerSumCumProps } from '@renderer/types';
+import { MerProps, isOnlineProps, InfoWellProps, MerSumCumProps, MerCumProps, TroilProps } from '@renderer/types';
 import { OilLiqGasArea } from '@components/charts/Production/OilLiqGasArea';
 import { InfoWell } from '@components/info/Infowell';
 import { OilLiqGasBar } from '@components/charts/Production/OilLiqGasBar';
@@ -12,7 +12,7 @@ import { CurrentPerfomance } from '@components/info/CurrentPerfomance';
 import { AccumPerfomance } from '@components/info/AccumPerfomance';
 import { ActualGTM } from '@components/info/ActualGTM';
 
-export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isOnlineProps) {
+export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isOnlineProps & MerCumProps & TroilProps) {
     return (
         <>
             <Box
@@ -28,7 +28,7 @@ export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isO
                 }}
             >
                 <Toolbar />
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Container maxWidth="lg" sx={{ mt: 2, mb: 2 }}>
                     <Grid container spacing={2}>
                         {/* Item 1*/}
                         <Grid item xs={12} md={6}>
@@ -64,13 +64,13 @@ export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isO
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <CurrentPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
+                                    <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMerCum={props.dataMerCum} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <CurrentPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
+                                        <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMerCum={props.dataMerCum} />
                                     </Paper>
                                 </Skeleton>
                             }

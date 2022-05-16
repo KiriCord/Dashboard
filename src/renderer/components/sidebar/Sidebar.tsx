@@ -58,18 +58,6 @@ export const SecondSidebar = (
             </ListItemIcon>
             <ListItemText primary="МЭР" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/table/dictelems">
-            <ListItemIcon>
-                <TableChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dictelems" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <TableChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Таблица 3" />
-        </ListItemButton>
     </React.Fragment>
 );
 

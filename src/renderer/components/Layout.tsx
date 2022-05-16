@@ -9,7 +9,7 @@ const Layout = () => {
 
     const mdTheme = createTheme({
         palette: {
-            mode: 'light',
+            mode: 'dark',
         }
     });
 

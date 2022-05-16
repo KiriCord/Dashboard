@@ -21,7 +21,7 @@ const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                 }}
             >
                 <Toolbar />
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Container maxWidth="lg" sx={{ mt: 2, mb: 2 }}>
                     <Grid container spacing={2}>
                         {/* Chart 1*/}
                         <Grid item xs={12} md={6}>
