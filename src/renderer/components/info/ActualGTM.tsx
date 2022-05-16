@@ -10,11 +10,11 @@ export const ActualGTM = (props: InfoWellProps & MerProps) => {
         <>
             <Title>Актуальный ГТМ</Title>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                <Typography align="center" component="p" variant="subtitle1" >dQн -</Typography>
-                <Typography align="center" component="p" variant="subtitle1">dQж -</Typography>
+                {/* <Typography align="center" component="p" variant="subtitle1" >dQн -</Typography>
+                <Typography align="center" component="p" variant="subtitle1">dQж -</Typography> */}
             </Box>
             <Typography align="center" color="text.primary" component="h6" variant="h6">
-                LastDate
+                НЕТ ДАННЫХ
             </Typography>
         </>
     );

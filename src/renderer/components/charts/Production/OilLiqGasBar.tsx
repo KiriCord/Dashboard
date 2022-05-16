@@ -1,4 +1,5 @@
 import Title from '@components/info/Title';
+import { Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { MerProps, Mer } from "../../../types";
@@ -11,7 +12,6 @@ function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[
     return res;
 }
 
-
 export const OilLiqGasBar = (props: MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
@@ -23,6 +23,8 @@ export const OilLiqGasBar = (props: MerProps) => {
     const gasShorted = props.dataMer.map(item => item["gas"]).filter((e, j) => (++j) % 40 === 0);
     const oilShorted = props.dataMer.map(item => item["oil"]).filter((e, k) => (++k) % 40 === 0);
     const liqShorted = props.dataMer.map(item => item["liq"]).filter((e, k) => (++k) % 40 === 0);
+
+    const theme = useTheme();
 
     return (
         <>

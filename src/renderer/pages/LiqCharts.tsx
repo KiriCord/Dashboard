@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import { MerProps, InfoWellProps, isOnlineProps } from "../types";
 import { LiqArea } from '@components/charts/Production/LiqArea';
 import { InfoWell } from '@components/info/Infowell';
+import { LiqBar } from '@components/charts/Production/LiqBar';
 
 const LiqCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
@@ -57,41 +58,15 @@ const LiqCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 3 */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <LiqArea dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <LiqArea dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 4  */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <LiqArea dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <LiqArea dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 5  */}
+                        {/* Chart 3  */}
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <LiqArea dataMer={props.dataMer} />
+                                    <LiqBar dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <LiqArea dataMer={props.dataMer} />
+                                        <LiqBar dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }

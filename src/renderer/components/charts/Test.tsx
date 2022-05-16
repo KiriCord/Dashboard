@@ -52,7 +52,12 @@ export const TestChart = (props: MerProps) => {
                         style={theme.typography.body2}
                     >
                     </YAxis>
-                    <Area type="monotone" dataKey="Нефть" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
+                    <Area
+                        type="monotone"
+                        dataKey="Нефть"
+                        stroke="#8884d8"
+                        fillOpacity={1}
+                        fill="url(#colorOil)" />
                     {/* <Line
                         isAnimationActive={false}
                         type="monotone"

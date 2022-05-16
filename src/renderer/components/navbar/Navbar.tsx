@@ -1,4 +1,4 @@
-import { Toolbar, IconButton, Typography } from '@mui/material';
+import { Toolbar, IconButton, Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -56,9 +56,19 @@ const Navbar = (props: isOnlineProps) => {
                         sx={{ flexGrow: 1 }}
                     >
                         Дашборд
+
                     </Typography>
-                    {/* <ToggleColorMode />
-                    <Typography component="h1"
+                    <Typography
+                        variant="subtitle1"
+                        color="inherit"
+                        noWrap
+                    >
+                        Цветовая схема
+                    </Typography>
+                    <Box sx={{ marginRight: 3 }}>
+                        <ToggleColorMode />
+                    </Box>
+                    {/* <Typography component="h1"
                         variant="h6"
                         color="inherit"
                         noWrap

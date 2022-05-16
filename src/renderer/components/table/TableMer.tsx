@@ -51,10 +51,10 @@ export default function DataTables(props: MerProps & InfoWellProps) {
 
     const charwork = props.dataMer.map(item => item["charwork"]);
     const dt = props.dataMer.map(toDate);
-    const gas = props.dataMer.map(item => item["gas"]);
-    const liq = props.dataMer.map(item => item["liq"]);
-    const oil = props.dataMer.map(item => item["oil"]);
-    const priem = props.dataMer.map(item => item["priem"]);
+    const gas = props.dataMer.map(item => Number.parseInt(item["gas"].toFixed()));
+    const liq = props.dataMer.map(item => Number.parseInt(item["liq"].toFixed()));
+    const oil = props.dataMer.map(item => Number.parseInt(item["oil"].toFixed()));
+    const priem = props.dataMer.map(item => Number.parseInt(item["priem"].toFixed()));
 
 
 

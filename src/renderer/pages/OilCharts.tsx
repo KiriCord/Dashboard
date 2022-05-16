@@ -3,8 +3,8 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import { MerProps, InfoWellProps, isOnlineProps } from "../types";
 import { InfoWell } from '@components/info/Infowell';
-import { TestChart } from '@components/charts/Test';
-
+import { OilArea } from '@components/charts/Production/OilArea';
+import { OilBar } from '@components/charts/Production/OilBar';
 
 const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
@@ -29,12 +29,12 @@ const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    <OilArea dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        <OilArea dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -54,42 +54,15 @@ const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 3 */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper
-                                        sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 4  */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <TestChart dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <TestChart dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 5  */}
+                        {/* Chart 3  */}
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <TestChart dataMer={props.dataMer} />
+                                    <OilBar dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <TestChart dataMer={props.dataMer} />
+                                        <OilBar dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }

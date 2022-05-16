@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import { MerProps, InfoWellProps, isOnlineProps } from "../types";
 import { GasArea } from '@components/charts/Production/GasArea';
 import { InfoWell } from '@components/info/Infowell';
+import { GasBar } from '@components/charts/Production/GasBar';
 
 const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
     return (
@@ -57,41 +58,15 @@ const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                 </Skeleton>
                             }
                         </Grid>
-                        {/* Chart 3 */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <GasArea dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <GasArea dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 4  */}
-                        <Grid item xs={12} md={6}>
-                            {props.isOnline ?
-                                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <GasArea dataMer={props.dataMer} />
-                                </Paper> :
-                                <Skeleton variant="rectangular" width="100%" height="100%">
-                                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <GasArea dataMer={props.dataMer} />
-                                    </Paper>
-                                </Skeleton>
-                            }
-                        </Grid>
-                        {/* Chart 5  */}
+                        {/* Chart 2  */}
                         <Grid item xs={12}>
                             {props.isOnline ?
                                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                    <GasArea dataMer={props.dataMer} />
+                                    <GasBar dataMer={props.dataMer} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 600 }}>
-                                        <GasArea dataMer={props.dataMer} />
+                                        <GasBar dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }

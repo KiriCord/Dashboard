@@ -2,6 +2,8 @@ import React from "react";
 import { useTheme } from '@mui/material/styles';
 import { AreaChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend, CartesianGrid } from 'recharts';
 import { MerProps, Mer } from "../../../types";
+import { Box, Typography } from "@mui/material";
+import Title from "@components/info/Title";
 
 
 function createData(labels: string[], oil: Number[]) {
@@ -19,11 +21,13 @@ export const OilArea = (props: MerProps) => {
     }
 
     const labels = props.dataMer.map(toDate);
-    const oil = props.dataMer.map(item => item["oil"]);
+    const oil = props.dataMer.map(item => Number.parseInt(item["oil"].toFixed()));
 
     const theme = useTheme();
+
     return (
         <>
+            <Title>График добычи</Title>
             <ResponsiveContainer>
                 <AreaChart
                     data={createData(labels, oil)}
