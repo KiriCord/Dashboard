@@ -55,7 +55,7 @@ const Navbar = (props: isOnlineProps) => {
                         noWrap
                         sx={{ flexGrow: 1 }}
                     >
-                        Дашборд
+                        Dashboard
 
                     </Typography>
                     <Typography

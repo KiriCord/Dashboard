@@ -4,6 +4,11 @@ import { MerProps, InfoWellProps, Mer } from "@renderer/types";
 import Title from "./Title";
 import { Divider } from "@mui/material";
 
+const also = <T, R>(action: (arg: T) => void, f: (arg: T) => R, value: T) => {
+    action(value);
+    return f(value);
+}
+
 export const InfoWell = (props: InfoWellProps & MerProps) => {
     const toDate = (mer: Mer) => {
         const date = new Date(mer["dt"] as string);
@@ -12,12 +17,12 @@ export const InfoWell = (props: InfoWellProps & MerProps) => {
     }
 
     const labels = props.dataMer.map(toDate);
-    const oilMax = Math.max(...props.dataMer.map(item => item["oil"]));
-    const oilMin = Math.min(...props.dataMer.map(item => item["oil"]));
-    const gasMax = Math.max(...props.dataMer.map(item => item["gas"]));
-    const gasMin = Math.min(...props.dataMer.map(item => item["gas"]));
-    const liqMax = Math.max(...props.dataMer.map(item => item["liq"]));
-    const liqMin = Math.min(...props.dataMer.map(item => item["liq"]));
+    const oilMax = Math.max(...props.dataMer.map(item => item["oil"]).filter(v => Number.isFinite(v)));
+    const oilMin = Math.min(...props.dataMer.map(item => item["oil"]).filter(v => Number.isFinite(v)));
+    const gasMax = Math.max(...props.dataMer.map(item => item["gas"]).filter(v => Number.isFinite(v)));
+    const gasMin = Math.min(...props.dataMer.map(item => item["gas"]).filter(v => Number.isFinite(v)));
+    const liqMax = Math.max(...props.dataMer.map(item => item["liq"]).filter(v => Number.isFinite(v)));
+    const liqMin = Math.min(...props.dataMer.map(item => item["liq"]).filter(v => Number.isFinite(v)));
 
     return (
         <>
@@ -29,27 +34,27 @@ export const InfoWell = (props: InfoWellProps & MerProps) => {
                 Номер скважены: {props.WellId}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Количество данных: {labels.length - 1 ? labels.length - 1 : "-"}
+                Количество данных: {labels.length ? labels.length - 1 : "-"}
             </Typography>
             <Divider sx={{ my: 1 }} />
             <Typography component="p" variant="subtitle1">
 
-                Максимальное значение нефти: {oilMax > 0 ? oilMax.toFixed() : "0"}
+                Максимальное значение нефти: {Number.isFinite(oilMax) ? oilMax.toFixed() : "0"}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение нефти: {oilMin > 0 ? oilMin.toFixed() : "0"}
+                Минимальное значение нефти: {Number.isFinite(oilMin) ? oilMin.toFixed() : "0"}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Максимальное значение газа: {gasMax > 0 ? gasMax.toFixed() : "0"}
+                Максимальное значение газа: {Number.isFinite(gasMax) ? gasMax.toFixed() : "0"}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение газа: {gasMin > 0 ? gasMin.toFixed() : "0"}
+                Минимальное значение газа: {Number.isFinite(gasMin) ? gasMin.toFixed() : "0"}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Максимальное значение жидкости: {liqMax > 0 ? liqMax.toFixed() : "0"}
+                Максимальное значение жидкости: {Number.isFinite(liqMax) ? liqMax.toFixed() : "0"}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение жидкости: {liqMin > 0 ? liqMin.toFixed() : "0"}
+                Минимальное значение жидкости: {Number.isFinite(liqMin) ? liqMin.toFixed() : "0"}
             </Typography>
             <Typography color="text.secondary" sx={{ flex: 1 }}>
                 с {labels.find(Boolean)} по {labels[labels.length - 1]}

@@ -9,24 +9,23 @@ import { Box } from "@mui/material";
 </Typography> */}
 
 export const AccumPerfomance = (props: InfoWellProps & MerSumCumProps) => {
-
-    const qn = props.dataMerSumCum.map(item => item["qn"]).reduce((a, b) => a + b, 0).toFixed(2);
-    const ql = props.dataMerSumCum.map(item => item["ql"]).reduce((a, b) => a + b, 0).toFixed(2);
-    const zak = props.dataMerSumCum.map(item => item["zak"]).reduce((a, b) => a + b, 0).toFixed(2);
+    const liq = props.dataMerSumCum.map(item => item["liq"]).at(-1)?.toFixed(2);
+    const oil = props.dataMerSumCum.map(item => item["oil"]).at(-1)?.toFixed(2);
+    const zak = props.dataMerSumCum.map(item => item["zak"]).at(-1)?.toFixed(2);
 
     return (
         <>
             <Title>Накопленные показатели</Title>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
                 <Typography align="left" component="p" variant="subtitle1">Qн, т</Typography>
-                <Typography align="right" component="p" variant="subtitle1">{qn}</Typography>
+                <Typography align="right" component="p" variant="subtitle1">{oil}</Typography>
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                <Typography align="left" component="p" variant="subtitle1">Qж, т</Typography>
-                <Typography align="right" component="p" variant="subtitle1">{ql}</Typography>
+                <Typography align="left" component="p" variant="subtitle1">Qж, м3</Typography>
+                <Typography align="right" component="p" variant="subtitle1">{liq}</Typography>
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                <Typography align="left" component="p" variant="subtitle1">Закачка, т</Typography>
+                <Typography align="left" component="p" variant="subtitle1">Закачка, м3</Typography>
                 <Typography align="right" component="p" variant="subtitle1">{zak}</Typography>
             </Box>
         </>

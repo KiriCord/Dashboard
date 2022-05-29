@@ -1,5 +1,5 @@
 export type Mer = {
-  charwork: number;
+  'charwork.name': string;
   dt: string;
   gas: number;
   liq: number;
@@ -8,8 +8,8 @@ export type Mer = {
 }
 
 export type MerSumCum = {
-  ql: number;
-  qn: number;
+  liq: number;
+  oil: number;
   zak: number;
   dt: string;
 };

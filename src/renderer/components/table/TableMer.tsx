@@ -49,7 +49,7 @@ export default function DataTables(props: MerProps & InfoWellProps) {
         return `${month >= 10 ? month : "0" + month.toString()}.${date.getFullYear()}`
     }
 
-    const charwork = props.dataMer.map(item => item["charwork"]);
+    const charwork = props.dataMer.map(item => item["charwork.name"]);
     const dt = props.dataMer.map(toDate);
     const gas = props.dataMer.map(item => Number.parseInt(item["gas"].toFixed()));
     const liq = props.dataMer.map(item => Number.parseInt(item["liq"].toFixed()));
