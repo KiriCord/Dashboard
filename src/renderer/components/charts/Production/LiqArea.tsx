@@ -8,7 +8,7 @@ import Title from "@components/info/Title";
 
 function createData(labels: string[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Жидкость, м3': liq[index] }
+        return { 'Дата': item, 'Жидкость, т': liq[index] }
     });
     return res;
 }
