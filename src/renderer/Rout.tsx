@@ -22,8 +22,8 @@ const router = () => {
             fetch(`http://127.0.0.1:8000/mer/${wellId}`).then(req => req.json()).then(newMer => setMer(newMer)),
         (wellId: string) =>
             fetch(`http://127.0.0.1:8000/mersumcum/${wellId}`).then(req => req.json()).then(newMerSumCum => setMerSumCum(newMerSumCum)),
-        (wellId: string) =>
-            fetch(`http://127.0.0.1:8000/trinj/${wellId}`).then(req => req.json()).then(newTrinj => setTrinj(newTrinj)),
+        // (wellId: string) =>
+        //     fetch(`http://127.0.0.1:8000/trinj/${wellId}`).then(req => req.json()).then(newTrinj => setTrinj(newTrinj)),
         (wellId: string) =>
             fetch(`http://127.0.0.1:8000/troil/${wellId}`).then(req => req.json()).then(newTroil => setTroil(newTroil)),
         (wellId: string) =>
