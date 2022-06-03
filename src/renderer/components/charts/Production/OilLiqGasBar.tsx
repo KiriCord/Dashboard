@@ -7,7 +7,7 @@ import { MerProps, Mer } from "../../../types";
 
 function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Нефть': oil[index], 'Газ': gas[index], 'Жидкость': liq[index] }
+        return { 'Дата': item, 'Нефть, т': oil[index], 'Газ, м3': gas[index], 'Жидкость, т': liq[index] }
     });
     return res;
 }
@@ -43,9 +43,9 @@ export const OilLiqGasBar = (props: MerProps) => {
                     <XAxis dataKey="Дата" /><YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="Нефть" fill="#8884d8" />
-                    <Bar dataKey="Газ" fill="#82ca9d" />
-                    <Bar dataKey="Жидкость" fill="#82A6CA" />
+                    <Bar dataKey="Нефть, т" fill="#8884d8" />
+                    <Bar dataKey="Газ, м3" fill="#82ca9d" />
+                    <Bar dataKey="Жидкость, т" fill="#82A6CA" />
                 </BarChart>
             </ResponsiveContainer>
         </>

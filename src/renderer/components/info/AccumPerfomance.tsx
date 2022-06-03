@@ -21,7 +21,7 @@ export const AccumPerfomance = (props: InfoWellProps & MerSumCumProps) => {
                 <Typography align="right" component="p" variant="subtitle1">{oil}</Typography>
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                <Typography align="left" component="p" variant="subtitle1">Qж, м3</Typography>
+                <Typography align="left" component="p" variant="subtitle1">Qж, т</Typography>
                 <Typography align="right" component="p" variant="subtitle1">{liq}</Typography>
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
@@ -31,3 +31,4 @@ export const AccumPerfomance = (props: InfoWellProps & MerSumCumProps) => {
         </>
     );
 }
+

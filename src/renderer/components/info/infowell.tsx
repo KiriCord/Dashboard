@@ -39,22 +39,22 @@ export const InfoWell = (props: InfoWellProps & MerProps) => {
             <Divider sx={{ my: 1 }} />
             <Typography component="p" variant="subtitle1">
 
-                Максимальное значение нефти: {Number.isFinite(oilMax) ? oilMax.toFixed() : "0"}
+                Максимальное значение нефти: {Number.isFinite(oilMax) ? oilMax.toFixed() : "0"} т
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение нефти: {Number.isFinite(oilMin) ? oilMin.toFixed() : "0"}
+                Минимальное значение нефти: {Number.isFinite(oilMin) ? oilMin.toFixed() : "0"} т
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Максимальное значение газа: {Number.isFinite(gasMax) ? gasMax.toFixed() : "0"}
+                Максимальное значение газа: {Number.isFinite(gasMax) ? gasMax.toFixed() : "0"} м3
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение газа: {Number.isFinite(gasMin) ? gasMin.toFixed() : "0"}
+                Минимальное значение газа: {Number.isFinite(gasMin) ? gasMin.toFixed() : "0"} м3
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Максимальное значение жидкости: {Number.isFinite(liqMax) ? liqMax.toFixed() : "0"}
+                Максимальное значение жидкости: {Number.isFinite(liqMax) ? liqMax.toFixed() : "0"} м3
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Минимальное значение жидкости: {Number.isFinite(liqMin) ? liqMin.toFixed() : "0"}
+                Минимальное значение жидкости: {Number.isFinite(liqMin) ? liqMin.toFixed() : "0"} м3
             </Typography>
             <Typography color="text.secondary" sx={{ flex: 1 }}>
                 с {labels.find(Boolean)} по {labels[labels.length - 1]}

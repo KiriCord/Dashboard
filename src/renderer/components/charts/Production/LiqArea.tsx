@@ -8,7 +8,7 @@ import Title from "@components/info/Title";
 
 function createData(labels: string[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Жидкость': liq[index] }
+        return { 'Дата': item, 'Жидкость, м3': liq[index] }
     });
     return res;
 }
@@ -55,7 +55,7 @@ export const LiqArea = (props: MerProps) => {
                         style={theme.typography.body2}
                     >
                     </YAxis>
-                    <Area type="monotone" dataKey="Жидкость" stroke="#82A6CA" fillOpacity={1} fill="url(#colorLiq)" />
+                    <Area type="monotone" dataKey="Жидкость, т" stroke="#82A6CA" fillOpacity={1} fill="url(#colorLiq)" />
                     <Tooltip />
                     <Legend />
                 </AreaChart>

@@ -7,7 +7,7 @@ import { MerProps, Mer } from "../../../types";
 
 function createData(labels: string[], gas: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Газ': gas[index] }
+        return { 'Дата': item, 'Газ, м3': gas[index] }
     });
     return res;
 }
@@ -40,7 +40,7 @@ export const GasBar = (props: MerProps) => {
                     <Tooltip />
                     <Legend />
                     <Brush dataKey="Дата" height={30} stroke="#82ca9d" endIndex={20} />
-                    <Bar dataKey="Газ" fill="#82ca9d" />
+                    <Bar dataKey="Газ, м3" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
         </>

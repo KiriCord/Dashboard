@@ -2,7 +2,7 @@ import * as React from 'react';
 import MUIDataTable from "mui-datatables";
 import { MerProps, InfoWellProps, Mer } from '@renderer/types';
 
-const columns = ["Дата", "Характер работы", "Добыто газа", "Добыто жидкости", "Добыто нефти", "Приемистость"];
+const columns = ["Дата", "Характер работы", "Добыто газа, м3", "Добыто жидкости, т", "Добыто нефти, т", "Приемистость, м3/сут"];
 
 const options = {
     textLabels: {

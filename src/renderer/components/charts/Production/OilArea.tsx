@@ -8,7 +8,7 @@ import Title from "@components/info/Title";
 
 function createData(labels: string[], oil: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Нефть': oil[index] }
+        return { 'Дата': item, 'Нефть, т': oil[index] }
     });
     return res;
 }
@@ -55,7 +55,7 @@ export const OilArea = (props: MerProps) => {
                         style={theme.typography.body2}
                     >
                     </YAxis>
-                    <Area type="monotone" dataKey="Нефть" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
+                    <Area type="monotone" dataKey="Нефть, т" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
                     <Tooltip />
                     <Legend />
                 </AreaChart>

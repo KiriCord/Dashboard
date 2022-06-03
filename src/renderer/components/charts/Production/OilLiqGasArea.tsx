@@ -8,7 +8,7 @@ import { Box, Typography } from "@mui/material";
 
 function createData(labels: string[], oil: Number[], gas: Number[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Нефть': oil[index], 'Газ': gas[index], 'Жидкость': liq[index] }
+        return { 'Дата': item, 'Нефть, т': oil[index], 'Газ, м3': gas[index], 'Жидкость, т': liq[index] }
     });
     return res;
 }
@@ -67,9 +67,9 @@ export const OilLiqGasArea = (props: MerProps) => {
                     </YAxis>
                     <ReferenceLine y={0} stroke="#000" />
                     <Brush dataKey="Дата" height={30} stroke="#726F9B" />
-                    <Area type="monotone" dataKey="Нефть" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
-                    <Area type="monotone" dataKey="Газ" stroke="#82ca9d" fillOpacity={1} fill="url(#colorGas)" />
-                    <Area type="monotone" dataKey="Жидкость" stroke="#82A6CA" fillOpacity={1} fill="url(#colorLiq)" />
+                    <Area type="monotone" dataKey="Нефть, т" stroke="#8884d8" fillOpacity={1} fill="url(#colorOil)" />
+                    <Area type="monotone" dataKey="Газ, м3" stroke="#82ca9d" fillOpacity={1} fill="url(#colorGas)" />
+                    <Area type="monotone" dataKey="Жидкость, т" stroke="#82A6CA" fillOpacity={1} fill="url(#colorLiq)" />
                     <Tooltip />
                     <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
                 </AreaChart>

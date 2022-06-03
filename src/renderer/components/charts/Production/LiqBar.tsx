@@ -7,7 +7,7 @@ import { MerProps, Mer } from "../../../types";
 
 function createData(labels: string[], liq: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Жидкость': liq[index] }
+        return { 'Дата': item, 'Жидкость, м3': liq[index] }
     });
     return res;
 }
@@ -40,7 +40,7 @@ export const LiqBar = (props: MerProps) => {
                     <Tooltip />
                     <Legend />
                     <Brush dataKey="Дата" height={30} stroke="#82A6CA" endIndex={20} />
-                    <Bar dataKey="Жидкость" fill="#82A6CA" />
+                    <Bar dataKey="Жидкость, т" fill="#82A6CA" />
                 </BarChart>
             </ResponsiveContainer>
         </>

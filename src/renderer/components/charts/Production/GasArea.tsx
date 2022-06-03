@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useTheme } from '@mui/material/styles';
 import { AreaChart, Area, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend, CartesianGrid } from 'recharts';
 import { MerProps, Mer } from "../../../types";
@@ -8,7 +8,7 @@ import Title from "@components/info/Title";
 
 function createData(labels: string[], gas: Number[]) {
     let res = labels.map((item, index) => {
-        return { 'Дата': item, 'Газ': gas[index] }
+        return { 'Дата': item, 'Газ, м3': gas[index] }
     });
     return res;
 }
@@ -55,7 +55,7 @@ export const GasArea = (props: MerProps) => {
                         style={theme.typography.body2}
                     >
                     </YAxis>
-                    <Area type="monotone" dataKey="Газ" stroke="#82ca9d" fillOpacity={1} fill="url(#colorGas)" />
+                    <Area type="monotone" dataKey="Газ, м3" stroke="#82ca9d" fillOpacity={1} fill="url(#colorGas)" />
                     <Tooltip />
                     <Legend />
                 </AreaChart>
