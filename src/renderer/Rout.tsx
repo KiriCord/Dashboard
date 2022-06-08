@@ -5,29 +5,25 @@ import { AllCharts } from "./pages/AllCharts";
 import OilCharts from "./pages/OilCharts";
 import Navbar from "./components/navbar/Navbar";
 import GasCharts from './pages/GasCharts';
-import { Mer, MerCum, MerSumCum, Troil, Trinj } from './types';
+import { Mer, Troil, Trinj } from './types';
 import LiqCharts from './pages/LiqCharts';
 
 const router = () => {
     const [isOnline, setOnline] = useState(false);
     const [wellId, setWellId] = useState("");
     const [mer, setMer] = useState([] as Mer[]);
-    const [merSumCum, setMerSumCum] = useState([] as MerSumCum[]);
     const [trinj, setTrinj] = useState([] as Trinj[]);
     const [troil, setTroil] = useState([] as Troil[]);
-    const [merCum, setMerCum] = useState([] as MerCum[]);
+
+    console.log('wellId', wellId)
 
     const updateView = [
         (wellId: string) =>
             fetch(`http://127.0.0.1:8000/mer/${wellId}`).then(req => req.json()).then(newMer => setMer(newMer)),
-        (wellId: string) =>
-            fetch(`http://127.0.0.1:8000/mersumcum/${wellId}`).then(req => req.json()).then(newMerSumCum => setMerSumCum(newMerSumCum)),
         // (wellId: string) =>
         //     fetch(`http://127.0.0.1:8000/trinj/${wellId}`).then(req => req.json()).then(newTrinj => setTrinj(newTrinj)),
         (wellId: string) =>
             fetch(`http://127.0.0.1:8000/troil/${wellId}`).then(req => req.json()).then(newTroil => setTroil(newTroil)),
-        (wellId: string) =>
-            fetch(`http://127.0.0.1:8000/mercum/${wellId}`).then(req => req.json()).then(newMerCum => setMerCum(newMerCum)),
         setWellId,
         console.log,
     ];
@@ -49,7 +45,7 @@ const router = () => {
         <BrowserRouter>
             <Navbar isOnline={isOnline} />
             <Routes>
-                <Route path="/" element={<AllCharts dataMer={mer} dataMerSumCum={merSumCum} WellId={wellId} isOnline={isOnline} dataTroil={troil} dataMerCum={merCum} />} />
+                <Route path="/" element={<AllCharts dataMer={mer} WellId={wellId} isOnline={isOnline} dataTroil={troil} />} />
                 <Route path="/charts/oil" element={<OilCharts dataMer={mer} WellId={wellId} isOnline={isOnline} />} />
                 <Route path="/charts/gas" element={<GasCharts dataMer={mer} WellId={wellId} isOnline={isOnline} />} />
                 <Route path="/charts/liq" element={<LiqCharts dataMer={mer} WellId={wellId} isOnline={isOnline} />} />

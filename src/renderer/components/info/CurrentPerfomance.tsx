@@ -1,14 +1,14 @@
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { InfoWellProps, MerCumProps, TroilProps } from "@renderer/types";
+import { InfoWellProps, MerProps, TroilProps } from "@renderer/types";
 import Title from "./Title";
 import { Box } from "@mui/material";
 
-export const CurrentPerfomance = (props: InfoWellProps & MerCumProps & TroilProps) => {
+export const CurrentPerfomance = (props: InfoWellProps & MerProps & TroilProps) => {
 
-    const qn = props.dataMerCum.map(item => item["qn"]).at(-1)?.toFixed();
-    const ql = props.dataMerCum.map(item => item["ql"]).at(-1)?.toFixed();
-    const obvod = props.dataMerCum.map(item => item["obvod"]).at(-1)?.toFixed();
+    const qn = props.dataMer.map(item => item["oil"]).at(-1)?.toFixed();
+    const ql = props.dataMer.map(item => item["liq"]).at(-1)?.toFixed();
+    const obvod = props.dataMer.map(item => item["obvod"]).at(-1)?.toFixed();
 
     const qliquid = props.dataTroil.map(item => item["qliquid"]).at(-1)?.toFixed();
     const qnefti = props.dataTroil.map(item => item["qnefti"]).at(-1)?.toFixed();

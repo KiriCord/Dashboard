@@ -4,26 +4,17 @@ export type Mer = {
   gas: number;
   liq: number;
   oil: number;
+  liq_cum: number;
+  oil_cum: number;
+  zak_cum: number;
+  obvod: number;
   priem: number;
 }
-
-export type MerSumCum = {
-  liq: number;
-  oil: number;
-  zak: number;
-  dt: string;
-};
 
 export type Troil = {
   qliquid: number;
   qnefti: number;
   obvodnen: number;
-}
-
-export type MerCum = {
-  ql: number;
-  qn: number;
-  obvod: number;
 }
 
 export type Trinj = {
@@ -38,14 +29,6 @@ export type TroilProps =
   {
     dataTroil: Troil[];
   }
-
-export type MerCumProps = {
-  dataMerCum: MerCum[];
-}
-
-export type MerSumCumProps = {
-  dataMerSumCum: MerSumCum[];
-}
 
 export type TrinjProps = {
   dataTrinj: Trinj[];

@@ -2,7 +2,7 @@ import { Box, Toolbar, Grid, Paper } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
 import Skeleton from '@mui/material/Skeleton';
-import { MerProps, isOnlineProps, InfoWellProps, MerSumCumProps, MerCumProps, TroilProps } from '@renderer/types';
+import { MerProps, isOnlineProps, InfoWellProps, TroilProps } from '@renderer/types';
 import { OilLiqGasArea } from '@components/charts/Production/OilLiqGasArea';
 import { InfoWell } from '@components/info/Infowell';
 import { OilLiqGasBar } from '@components/charts/Production/OilLiqGasBar';
@@ -12,7 +12,7 @@ import { CurrentPerfomance } from '@components/info/CurrentPerfomance';
 import { AccumPerfomance } from '@components/info/AccumPerfomance';
 import { ActualGTM } from '@components/info/ActualGTM';
 
-export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isOnlineProps & MerCumProps & TroilProps) {
+export function AllCharts(props: MerProps & InfoWellProps & isOnlineProps & TroilProps) {
     return (
         <>
             <Box
@@ -64,13 +64,13 @@ export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isO
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMerCum={props.dataMerCum} />
+                                    <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMer={props.dataMer} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMerCum={props.dataMerCum} />
+                                        <CurrentPerfomance WellId={props.WellId} dataTroil={props.dataTroil} dataMer={props.dataMer} />
                                     </Paper>
                                 </Skeleton>
                             }
@@ -80,13 +80,13 @@ export function AllCharts(props: MerProps & MerSumCumProps & InfoWellProps & isO
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                    <AccumPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
+                                    <AccumPerfomance dataMer={props.dataMer} WellId={props.WellId} />
                                 </Paper>
                                 :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 170 }}>
-                                        <AccumPerfomance dataMerSumCum={props.dataMerSumCum} WellId={props.WellId} />
+                                        <AccumPerfomance dataMer={props.dataMer} WellId={props.WellId} />
                                     </Paper>
                                 </Skeleton>
                             }
