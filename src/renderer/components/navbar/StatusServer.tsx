@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
-import { isOnlineProps } from '@renderer/types';
+import { IsOnlineProps } from '@renderer/types';
 
 const StatusServerClose = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -61,7 +61,7 @@ const StatusServerActive = styled(Badge)(({ theme }) => ({
     },
 }));
 
-export function StatusServer(props: isOnlineProps) {
+export function StatusServer(props: IsOnlineProps) {
     return (
         <>
             {props.isOnline ? <StatusServerActive overlap="circular" variant="dot" /> : <StatusServerClose overlap="circular" variant="dot" />}

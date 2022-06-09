@@ -1,12 +1,12 @@
 import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { MerProps, InfoWellProps, isOnlineProps } from "../types";
+import { MerProps, InfoWellProps, IsOnlineProps } from "../types";
 import { InfoWell } from '@components/info/Infowell';
 import { OilArea } from '@components/charts/Production/OilArea';
 import { OilBar } from '@components/charts/Production/OilBar';
 
-const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
+const OilCharts = (props: MerProps & InfoWellProps & IsOnlineProps) => {
     return (
         <>
             <Box
@@ -44,12 +44,12 @@ const OilCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                             {props.isOnline ?
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                    <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                    <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                        <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                     </Paper>
                                 </Skeleton>
                             }

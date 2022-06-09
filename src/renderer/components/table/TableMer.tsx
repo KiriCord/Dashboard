@@ -64,7 +64,7 @@ export default function DataTables(props: MerProps & InfoWellProps) {
 
     return (
         <MUIDataTable
-            title={`Таблица Mer для скважины: ${props.WellId}`}
+            title={`Таблица Mer для скважины: ${props.wellId}`}
             data={data}
             columns={columns}
             //@ts-ignore

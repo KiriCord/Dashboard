@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider';
 import { StatusServer } from './StatusServer';
 
 import React from 'react';
-import { isOnlineProps } from '@renderer/types';
+import { IsOnlineProps, InfoWellProps } from '@renderer/types';
 import { ToggleColorMode } from '@renderer/components/navbar/TogglingColor';
 
 const drawerWidth: number = 240;
@@ -38,7 +38,7 @@ const Drawer = styled(MuiDrawer)(
 );
 
 
-const Navbar = (props: isOnlineProps) => {
+const Navbar = (props: IsOnlineProps & InfoWellProps) => {
 
     return (
         <>
@@ -55,7 +55,7 @@ const Navbar = (props: isOnlineProps) => {
                         noWrap
                         sx={{ flexGrow: 1 }}
                     >
-                        Dashboard
+                        {props.isOnline ? props.oilfield + ' - ' + props.wellId : "Dashboard"}
 
                     </Typography>
                     <Typography

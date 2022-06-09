@@ -4,7 +4,7 @@ import { InfoWellProps, MerProps, TroilProps } from "@renderer/types";
 import Title from "./Title";
 import { Box } from "@mui/material";
 
-export const CurrentPerfomance = (props: InfoWellProps & MerProps & TroilProps) => {
+export const CurrentPerfomance = (props: MerProps & TroilProps) => {
 
     const qn = props.dataMer.map(item => item["oil"]).at(-1)?.toFixed();
     const ql = props.dataMer.map(item => item["liq"]).at(-1)?.toFixed();

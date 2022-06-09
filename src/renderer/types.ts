@@ -36,9 +36,10 @@ export type TrinjProps = {
 
 
 export type InfoWellProps = {
-  WellId: string;
+  oilfield: string;
+  wellId: string;
 }
 
-export type isOnlineProps = {
+export type IsOnlineProps = {
   isOnline: boolean;
 }

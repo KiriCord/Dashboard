@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Toolbar, Grid } from '@mui/material';
 import Table from "../components/table/TableDictelems";
-import { isOnlineProps, Dictelems } from '@renderer/types';
+import { IsOnlineProps, Dictelems } from '@renderer/types';
 
-const DictelemsTable = (props: isOnlineProps) => {
+const DictelemsTable = (props: IsOnlineProps) => {
     const [dictelems, setDictelems] = useState([] as Dictelems[]);
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/dictelems/Овальное`).then(req => req.json()).then(newDictelems => setDictelems(newDictelems));

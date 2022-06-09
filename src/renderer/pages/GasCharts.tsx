@@ -1,12 +1,12 @@
 import { Box, Toolbar, Grid, Paper, Skeleton } from '@mui/material';
 import React from 'react';
 import Container from '@mui/material/Container';
-import { MerProps, InfoWellProps, isOnlineProps } from "../types";
+import { MerProps, InfoWellProps, IsOnlineProps } from "../types";
 import { GasArea } from '@components/charts/Production/GasArea';
 import { InfoWell } from '@components/info/Infowell';
 import { GasBar } from '@components/charts/Production/GasBar';
 
-const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
+const GasCharts = (props: MerProps & InfoWellProps & IsOnlineProps) => {
     return (
         <>
             <Box
@@ -47,13 +47,13 @@ const GasCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                     {/* <div style={{ height: "100%", width: "100%" }}> */}
-                                    <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                    <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                     {/* </div> */}
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                        <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                     </Paper>
                                 </Skeleton>
                             }

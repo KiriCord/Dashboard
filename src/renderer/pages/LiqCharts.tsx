@@ -47,13 +47,13 @@ const LiqCharts = (props: MerProps & InfoWellProps & isOnlineProps) => {
                                 <Paper
                                     sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
                                     {/* <div style={{ height: "100%", width: "100%" }}> */}
-                                    <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                    <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                     {/* </div> */}
                                 </Paper> :
                                 <Skeleton variant="rectangular" width="100%" height="100%">
                                     <Paper
                                         sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 400 }}>
-                                        <InfoWell dataMer={props.dataMer} WellId={props.WellId} />
+                                        <InfoWell dataMer={props.dataMer} wellId={props.wellId} oilfield={props.oilfield} />
                                     </Paper>
                                 </Skeleton>
                             }

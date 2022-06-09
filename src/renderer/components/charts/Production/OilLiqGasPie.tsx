@@ -5,7 +5,12 @@ import { MerProps, Mer } from "../../../types";
 import Title from "@components/info/Title";
 import { Box, Typography } from "@mui/material";
 
-const COLORS = ['#82ca9d', '#8884d8', '#82A6CA'];
+const LIQ_COLOR = '#99CC99'
+const OIL_COLOR = '#2f7cc9'
+//const COLORS = ['#82ca9d', '#8884d8', '#82A6CA'];
+//const COLORS = ['#CCFFCC', '#8ec6fe', '#82A6CA'];
+const COLORS = [LIQ_COLOR, OIL_COLOR]
+
 
 type dataGOL = {
     name: string;
@@ -17,12 +22,12 @@ export const OilLiqGasPie = (props: MerProps) => {
 
 
     useEffect(() => {
-        const gas = props.dataMer.map(item => Number.parseInt(item["gas"].toFixed())).reduce((a, b) => a + b, 0);
+        // const gas = props.dataMer.map(item => Number.parseInt(item["gas"].toFixed())).reduce((a, b) => a + b, 0);
         const oil = props.dataMer.map(item => Number.parseInt(item["oil"].toFixed())).reduce((a, b) => a + b, 0);
         const liq = props.dataMer.map(item => Number.parseInt(item["liq"].toFixed())).reduce((a, b) => a + b, 0);
 
         setData([
-            { name: 'Газ, м3', value: gas },
+            // { name: 'Газ, м3', value: gas },
             { name: 'Нефть, т', value: oil },
             { name: 'Жидкость, т', value: liq }
         ]);
@@ -43,7 +48,7 @@ export const OilLiqGasPie = (props: MerProps) => {
                         cy="50%"
                         labelLine={false}
                         outerRadius={115}
-                        fill="#8884d8"
+                        fill="#000000"
                         dataKey="value"
                         label
                     >

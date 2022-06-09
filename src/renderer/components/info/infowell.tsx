@@ -24,14 +24,15 @@ export const InfoWell = (props: InfoWellProps & MerProps) => {
     const liqMax = Math.max(...props.dataMer.map(item => item["liq"]).filter(v => Number.isFinite(v)));
     const liqMin = Math.min(...props.dataMer.map(item => item["liq"]).filter(v => Number.isFinite(v)));
 
+
     return (
         <>
             <Title>Информация о скважине</Title>
             <Typography component="p" variant="subtitle1">
-                Месторождение: Овальное
+                Месторождение: {props.oilfield}
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Номер скважены: {props.WellId}
+                Номер скважены: {props.wellId}
             </Typography>
             <Typography component="p" variant="subtitle1">
                 Количество данных: {labels.length ? labels.length - 1 : "-"}
