@@ -1,4 +1,5 @@
 import * as path from 'path'
+import { format } from 'url'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { is } from 'electron-util'
 
@@ -23,23 +24,35 @@ async function createWindow() {
 
   const isDev = is.development;
 
-  function urlFromComponents({ pathname = '/', protocol = 'https:', hostname = 'test', ...props } = {}) {
-    const url = new URL('http://localhost:9080');
-    url.protocol = protocol;
-    url.hostname = hostname;
-    url.pathname = pathname;
-    return url;
-  }
+  // function urlFromComponents({ pathname = '/', protocol = 'https:', hostname = 'localhost', ...props } = {}) {
+  //   const url = new URL('http://localhost:9080');
+  //   url.protocol = protocol;
+  //   url.hostname = hostname;
+  //   url.pathname = pathname;
+  //   return url;
+  // }
 
+
+  // if (isDev) {
+  //   win.loadURL('http://localhost:9080')
+  // } else {
+  //   win.loadURL(
+  //     urlFromComponents({
+  //       pathname: path.join(__dirname, 'index.html'),
+  //       protocol: 'file',
+  //     }).toString(),
+  //   )
+  // }
 
   if (isDev) {
     win.loadURL('http://localhost:9080')
   } else {
     win.loadURL(
-      urlFromComponents({
+      format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
-      }).toString(),
+        slashes: true,
+      }),
     )
   }
 
