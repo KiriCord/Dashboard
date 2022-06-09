@@ -31,7 +31,7 @@ export const InfoWell = (props: InfoWellProps & MerProps) => {
                 Месторождение: Овальное
             </Typography>
             <Typography component="p" variant="subtitle1">
-                Номер скважены: {props.WellId}
+                Номер скважины: {props.WellId}
             </Typography>
             <Typography component="p" variant="subtitle1">
                 Количество данных: {labels.length ? labels.length - 1 : "-"}
