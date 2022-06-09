@@ -34,9 +34,7 @@
       }
     ],
     "win": {
-      "target": [
-        "zip"
-      ]
+      "target": []
     },
     "mac": {
       "target": [

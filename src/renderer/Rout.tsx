@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import MerTable from "./pages/MerTable";
 import { AllCharts } from "./pages/AllCharts";
 import OilCharts from "./pages/OilCharts";
@@ -51,7 +51,7 @@ const router = () => {
     }, []);
 
     return (
-        <BrowserRouter>
+        <MemoryRouter>
             <Navbar isOnline={isOnline} wellId={wellId} oilfield={oilfield} />
             <Routes>
                 <Route path="/" element={<AllCharts dataMer={mer} wellId={wellId} oilfield={oilfield} isOnline={isOnline} dataTroil={troil} />} />
@@ -61,7 +61,7 @@ const router = () => {
                 <Route path="/table/mer" element={<MerTable dataMer={mer} wellId={wellId} oilfield={oilfield} isOnline={isOnline} />} />
                 <Route path='*' element={<h1>204</h1>} />
             </Routes>
-        </BrowserRouter>
+        </MemoryRouter>
     )
 }
 

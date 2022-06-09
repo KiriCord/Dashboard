@@ -1,6 +1,7 @@
 import * as path from 'path'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { is } from 'electron-util'
+import { format } from 'url'
 
 let win: BrowserWindow | null = null
 
@@ -23,23 +24,14 @@ async function createWindow() {
 
   const isDev = is.development;
 
-  function urlFromComponents({ pathname = '/', protocol = 'https:', hostname = 'test', ...props } = {}) {
-    const url = new URL('http://localhost:9080');
-    url.protocol = protocol;
-    url.hostname = hostname;
-    url.pathname = pathname;
-    return url;
-  }
-
-
   if (isDev) {
     win.loadURL('http://localhost:9080')
   } else {
     win.loadURL(
-      urlFromComponents({
+      format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
-      }).toString(),
+      }),
     )
   }
 
@@ -55,9 +47,9 @@ async function createWindow() {
     win!.show()
     win!.focus()
 
-    if (isDev) {
-      win!.webContents.openDevTools();
-    }
+    // if (isDev) {
+    win!.webContents.openDevTools();
+    // }
   })
 }
 
